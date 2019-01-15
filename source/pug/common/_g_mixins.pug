@@ -1,0 +1,16 @@
+mixin setDefaults(values, defaultValues)
+  each value, key in defaultValues
+    if values[key] === undefined
+      - values[key] = defaultValues[key];
+
+mixin container(parent)
+  div(
+    class=`${parent}__container`
+  )
+    block
+
+mixin list(parent)
+  div(
+    class=`${parent}__list`
+  )
+    block

@@ -1,0 +1,89 @@
+// ===========
+// Sass mixins
+// ===========
+
+// Font stack
+// ==========
+//
+// Arguments:
+// ----------
+// $fontWeight: font-weight
+// $fontSize: font-size
+// $lineHeight: line-height
+//
+
+@mixin font(
+  $fontWeight: 400,
+  $fontSize: 18px,
+  $lineHeight: 1.5,
+) {
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-family: "#{$font-family}", "Arial", sans-serif;
+}
+
+// Equal horizontal margins
+// ========================
+//
+// Arguments:
+// ----------
+// $marginHorizontal: horizontal margin size
+//
+
+@mixin margin-hor($marginHorizontal: auto) {
+  margin-left: $marginHorizontal;
+  margin-right: $marginHorizontal;
+}
+
+// Equal horizontal paddings
+// =========================
+//
+// Arguments:
+// ----------
+// $paddingHorizontal: horizontal padding size
+//
+
+@mixin padding-hor($paddingHorizontal: 10px) {
+  padding-left: $paddingHorizontal;
+  padding-right: $paddingHorizontal;
+}
+
+// Unnumbered list
+// ===============
+
+@mixin list() {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+// Accessible hiding of element
+// ============================
+
+@mixin accessible-hiding() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(100%);
+}
+
+// Block outline
+// =============
+//
+// Arguments:
+// ----------
+// $color: outline color
+//
+
+@mixin outline($color: green) {
+  outline: 1px solid $color;
+  outline-offset: -1px;
+}

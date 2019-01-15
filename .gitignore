@@ -1,0 +1,12 @@
+# Project output folder
+build/
+
+# Project specification folder
+spec/
+
+# Log files
+*.log
+
+# Node.js modules
+node_modules/
+npm-debug.*
