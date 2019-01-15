@@ -1,0 +1,9 @@
+mixin page-footer(pageFooter_options)
+  - const blockClassname = 'page-footer';
+  footer(
+    class=[
+      blockClassname,
+      `${blockClassname}--${pageFooter_options.id}`,
+    ]
+  )&attributes(attributes)
+    +__container(blockClassname)

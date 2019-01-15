@@ -1,16 +1,35 @@
+//- =================
+//- Global Pug mixins
+//- =================
+
+//- Set default values of mixin
+//- ---------------------------
+
 mixin setDefaults(values, defaultValues)
   each value, key in defaultValues
     if values[key] === undefined
       - values[key] = defaultValues[key];
 
-mixin container(parent)
-  div(
-    class=`${parent}__container`
-  )
+//- Generates elements ob BEM-blocks
+//- ================================
+
+//- Container <div>
+//- ---------------
+
+mixin __container(parent)
+  div(class=`${parent}__container`)
     block
 
-mixin list(parent)
-  div(
-    class=`${parent}__list`
-  )
+//- Inner wrapper <div>
+//- -------------------
+
+mixin __inner(parent)
+  div(class=`${parent}__inner`)
+    block
+
+//- Generic <ul>
+//- ------------
+
+mixin __list(parent)
+  ul(class=`${parent}__list`)
     block

@@ -1,0 +1,9 @@
+mixin page-header(pageHeader_options)
+  - const blockClassname = 'page-header';
+  header(
+    class=[
+      blockClassname,
+      `${blockClassname}--${pageHeader_options.id}`,
+    ]
+  )&attributes(attributes)
+    +__container(blockClassname)

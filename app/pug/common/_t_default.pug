@@ -14,7 +14,7 @@ html(lang='ru')
   body.page(
     class=`page--${page.id}`
   )
-	block page-header
-    block page-main
-	block page-footer
-  block current-page-scripts
+    +page-header({ id: page.id })(class='page__header')
+    main.page__main
+    +page-footer({ id: page.id })(class='page__footer')
+    block current-page-scripts
