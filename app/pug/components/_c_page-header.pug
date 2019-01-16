@@ -6,4 +6,9 @@ mixin page-header(pageHeader_options)
       `${blockClassname}--${pageHeader_options.id}`,
     ]
   )&attributes(attributes)
-    +__div(blockClassname, 'container')
+    +__div(blockClassname, 'logo')
+      +logo()
+    +__div(blockClassname, 'call')
+      +call()
+    +__div(blockClassname, 'menu-button')
+      +menu-button()

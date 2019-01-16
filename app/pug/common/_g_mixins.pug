@@ -3,24 +3,35 @@
 //- =================
 
 //- Set default values of mixin
-//- ---------------------------
 
 mixin setDefaults(values, defaultValues)
   each value, key in defaultValues
     if values[key] === undefined
       - values[key] = defaultValues[key];
 
-//- Generates elements ob BEM-blocks
-//- ================================
+//- Generates BEM-blocks
+//- ====================
 
-//- Generic <div>
-//- ------------
+//- <button>
+
+mixin button(className, text)
+  button(
+    class=className,
+    type='button'
+  )
+    span(class=`${className}__button-legend`)= text
+
+
+//- Generates BEM-elements
+//- ======================
+
+//- <div> BEM-elements
 
 mixin __div(parent, elementName)
   div(class=`${parent}__${elementName}`)
     block
 
-mixin __heading(parent, size, text)
+mixin __heading(parent, size)
   case size
     when 1
       h1(class=`${parent}__heading`)
@@ -41,16 +52,23 @@ mixin __heading(parent, size, text)
       h6(class=`${parent}__heading`)
         block
 
-//- Generic <section>
-//- ------------
+//- <section> BEM-elements
 
 mixin __section(parent, elementName)
   section(class=`${parent}__${elementName}`)
     block
 
-//- <ul> list
-//- ---------
+//- <ul> BEM-elements
 
 mixin __list(parent)
   ul(class=`${parent}__list`)
+    block
+
+//- <button> BEM-elements
+
+mixin __button(parent)
+  button(
+    class=`${parent}__button`
+    type='button'
+  )&attributes(attributes)
     block

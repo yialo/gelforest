@@ -1,0 +1,5 @@
+mixin logo()
+  - const blockClassname = 'logo';
+  div(class=blockClassname)
+    +__heading(blockClassname, 1)
+      span(class=`${blockClassname}__string`)= siteName
