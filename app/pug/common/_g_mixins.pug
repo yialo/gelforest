@@ -22,8 +22,11 @@ mixin div(className)
 
 mixin button(className, text)
   button(
-    class=className,
-    type='button'
+    class=[
+      className,
+      attributes.class,
+    ]
+    type='button',
   )
     span(class=`${className}__button-legend`)= text
 
@@ -34,7 +37,10 @@ mixin button(className, text)
 //- <div> BEM-elements
 
 mixin __div(parent, elementName)
-  div(class=`${parent}__${elementName}`)
+  div(class=[
+    `${parent}__${elementName}`,
+    attributes.class,
+  ])
     block
 
 mixin __heading(parent, size)
@@ -69,7 +75,10 @@ mixin __list(parent)
 
 mixin __button(parent)
   button(
-    class=`${parent}__button`
+    class=[
+      `${parent}__button`,
+      attributes.class,
+    ]
     type='button'
-  )&attributes(attributes)
+  )
     block

@@ -14,7 +14,12 @@ html(lang='ru')
   body.page(
     class=`page--${page.id}`
   )
-    +page-header({ id: page.id })(class='page__header')
+    +page-header({ id: page.id })(
+      class=[
+        'page__header',
+        jsMenuClassname,
+      ]
+    )
     main.page__main
     +page-footer({ id: page.id })(class='page__footer')
     script(src='js/jquery-3.3.1.js')

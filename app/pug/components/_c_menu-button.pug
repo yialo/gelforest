@@ -3,13 +3,13 @@ mixin menu-button()
   +button(blockClassname, 'Показать меню')(
     class=[
       `${blockClassname}--open`,
-      'js-menu__button',
+      `${jsMenuClassname}__control-button`,
     ]
   )
   +button(blockClassname, 'Скрыть меню')(
     class=[
       `${blockClassname}--close`,
-      'js-menu__button',
+      `${jsMenuClassname}__control-button`,
       'is-hidden',
     ]
   )

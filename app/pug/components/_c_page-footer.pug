@@ -4,8 +4,9 @@ mixin page-footer(pageFooter_options)
     class=[
       blockClassname,
       `${blockClassname}--${pageFooter_options.id}`,
+      attributes.class,
     ]
-  )&attributes(attributes)
+  )
     +__section(blockClassname, 'navigation')
       +navigation(pageFooter_options.id)
     +__section(blockClassname, 'contacts')
