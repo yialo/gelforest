@@ -17,7 +17,7 @@ mixin contacts()
             = contactsItem_options.content
         when 'address'
           != contactsItem_options.content
-  div(class=blockClassname)
+  +div(blockClassname)
     +__heading(blockClassname, 2) Контакты
     +__list(blockClassname)
       each value, key in contactsList_data

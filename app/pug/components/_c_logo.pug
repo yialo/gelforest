@@ -1,5 +1,10 @@
 mixin logo()
   - const blockClassname = 'logo';
-  div(class=blockClassname)
+  +div(blockClassname)
+    img(
+      class=`${blockClassname}__image`
+      src='img/logo.png'
+      alt=siteName
+    )
     +__heading(blockClassname, 1)
       span(class=`${blockClassname}__string`)= siteName

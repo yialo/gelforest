@@ -1,7 +1,16 @@
-mixin navigation()
+mixin navigation(pageId)
   - const blockClassname = 'navigation';
   nav(class=blockClassname)
     +__heading(blockClassname, 2) Карта сайта
     +__list(blockClassname)
-      each value in navigationList_data
-        li(class=`${blockClassname}__item`)= value
+      each item in navigationList_data
+        each value, key in item
+          li(class=`${blockClassname}__item`)
+            a(
+              class=[
+                `${blockClassname}__link`,
+                `${blockClassname}__link--${key}`,
+                ( key === pageId ? 'is-current' : null ),
+              ]
+              href=( key === pageId ? null : `${key}.html` )
+            )= value

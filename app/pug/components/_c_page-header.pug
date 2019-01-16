@@ -4,6 +4,7 @@ mixin page-header(pageHeader_options)
     class=[
       blockClassname,
       `${blockClassname}--${pageHeader_options.id}`,
+      'js-menu'
     ]
   )&attributes(attributes)
     +__div(blockClassname, 'logo')
@@ -12,3 +13,5 @@ mixin page-header(pageHeader_options)
       +call()
     +__div(blockClassname, 'menu-button')
       +menu-button()
+    +__section(blockClassname, 'services')
+    +__section(blockClassname, 'interesting')

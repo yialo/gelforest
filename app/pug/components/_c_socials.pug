@@ -1,8 +1,10 @@
 mixin socials()
   - const blockClassname = 'socials';
   div(class=blockClassname)
+    +__heading(blockClassname, 2) Мы в социальных сетях
     +__list(blockClassname)
       each value in socialsList_data
+        - let modifier, text;
         - [modifier, text] = value
         li(class=`${blockClassname}__item`)
           a(

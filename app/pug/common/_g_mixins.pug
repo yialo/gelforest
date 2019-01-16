@@ -12,7 +12,13 @@ mixin setDefaults(values, defaultValues)
 //- Generates BEM-blocks
 //- ====================
 
-//- <button>
+//- <div> BEM-block
+
+mixin div(className)
+  div(class=className)
+    block
+
+//- <button> BEM-block
 
 mixin button(className, text)
   button(
@@ -37,6 +43,7 @@ mixin __heading(parent, size)
       h1(class=`${parent}__heading`)
         block
     when 2
+    default
       h2(class=`${parent}__heading`)
         block
     when 3
@@ -44,12 +51,6 @@ mixin __heading(parent, size)
         block
     when 4
       h4(class=`${parent}__heading`)
-        block
-    when 5
-      h5(class=`${parent}__heading`)
-        block
-    when 6
-      h6(class=`${parent}__heading`)
         block
 
 //- <section> BEM-elements

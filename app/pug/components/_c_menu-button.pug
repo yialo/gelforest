@@ -1,4 +1,15 @@
 mixin menu-button()
   - const blockClassname = 'menu-button';
-  +button(blockClassname, 'Показать меню')(class=`${blockClassname}--open`)
-  +button(blockClassname, 'Скрыть меню')(class=`${blockClassname}--close`)
+  +button(blockClassname, 'Показать меню')(
+    class=[
+      `${blockClassname}--open`,
+      'js-menu__button',
+    ]
+  )
+  +button(blockClassname, 'Скрыть меню')(
+    class=[
+      `${blockClassname}--close`,
+      'js-menu__button',
+      'is-hidden',
+    ]
+  )
