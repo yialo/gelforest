@@ -13,22 +13,43 @@ mixin setDefaults(values, defaultValues)
 //- Generates elements ob BEM-blocks
 //- ================================
 
-//- Container <div>
-//- ---------------
-
-mixin __container(parent)
-  div(class=`${parent}__container`)
-    block
-
-//- Inner wrapper <div>
-//- -------------------
-
-mixin __inner(parent)
-  div(class=`${parent}__inner`)
-    block
-
-//- Generic <ul>
+//- Generic <div>
 //- ------------
+
+mixin __div(parent, elementName)
+  div(class=`${parent}__${elementName}`)
+    block
+
+mixin __heading(parent, size, text)
+  case size
+    when 1
+      h1(class=`${parent}__heading`)
+        block
+    when 2
+      h2(class=`${parent}__heading`)
+        block
+    when 3
+      h3(class=`${parent}__heading`)
+        block
+    when 4
+      h4(class=`${parent}__heading`)
+        block
+    when 5
+      h5(class=`${parent}__heading`)
+        block
+    when 6
+      h6(class=`${parent}__heading`)
+        block
+
+//- Generic <section>
+//- ------------
+
+mixin __section(parent, elementName)
+  section(class=`${parent}__${elementName}`)
+    block
+
+//- <ul> list
+//- ---------
 
 mixin __list(parent)
   ul(class=`${parent}__list`)

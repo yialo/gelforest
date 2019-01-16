@@ -6,4 +6,10 @@ mixin page-footer(pageFooter_options)
       `${blockClassname}--${pageFooter_options.id}`,
     ]
   )&attributes(attributes)
-    +__container(blockClassname)
+    +__section(blockClassname, 'navigation')
+      +navigation()
+    +__section(blockClassname, 'contacts')
+      +contacts()
+    +__section(blockClassname, 'socials')
+    +__section(blockClassname, 'copyright')
+    +__div(blockClassname, 'top-link')

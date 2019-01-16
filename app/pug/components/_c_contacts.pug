@@ -1,0 +1,14 @@
+mixin contacts()
+  - const blockClassname = 'contacts';
+  div()
+    +__div(blockClassname, 'container')
+      +__heading(blockClassname, 2) Контакты
+      +__list(blockClassname)
+        each item, index in contactsList_data
+          each value, key in contactsList_data[index]
+            li(
+              class=[
+                `${blockClassname}__item`,
+                `${blockClassname}__item--${key}`
+              ]
+            )!= value
