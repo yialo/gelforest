@@ -1,8 +1,7 @@
 mixin navigation()
   - const blockClassname = 'navigation';
   nav(class=blockClassname)
-    +__div(blockClassname, 'container')
-      +__heading(blockClassname, 2) Карта сайта
-      +__list(blockClassname)
-        each value in navigationList_data
-          li(class=`${blockClassname}__item`)= value
+    +__heading(blockClassname, 2) Карта сайта
+    +__list(blockClassname)
+      each value in navigationList_data
+        li(class=`${blockClassname}__item`)= value

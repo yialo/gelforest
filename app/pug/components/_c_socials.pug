@@ -1,0 +1,15 @@
+mixin socials()
+  - const blockClassname = 'socials';
+  div(class=blockClassname)
+    +__list(blockClassname)
+      each value in socialsList_data
+        - [modifier, text] = value
+        li(class=`${blockClassname}__item`)
+          a(
+            class=[
+              `${blockClassname}__link`,
+              `${blockClassname}__link--${modifier}`,
+            ]
+            href=`https://${modifier}.com/`
+          )
+            span(class=`${blockClassname}__legend`)= text
