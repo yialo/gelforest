@@ -2,7 +2,7 @@ mixin socials()
   - const blockClassname = 'socials';
   div(class=blockClassname)
     +__heading(blockClassname, 2) Мы в социальных сетях
-    +__list(blockClassname)
+    +__ul(blockClassname, 'list')
       each value in socialsList_data
         - let modifier, text;
         - [modifier, text] = value
@@ -14,4 +14,4 @@ mixin socials()
             ]
             href=`https://${modifier}.com/`
           )
-            span(class=`${blockClassname}__legend`)= text
+            +__span(blockClassname, 'legend')= text

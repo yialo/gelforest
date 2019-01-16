@@ -9,18 +9,20 @@ mixin setDefaults(values, defaultValues)
     if values[key] === undefined
       - values[key] = defaultValues[key];
 
-//- Generates BEM-blocks
-//- ====================
-
 //- <div> BEM-block
 
 mixin div(className)
-  div(class=className)
+  div(
+    class=[
+      className,
+      attributes.class,
+    ]
+  )
     block
 
 //- <button> BEM-block
 
-mixin button(className, text)
+mixin button(className)
   button(
     class=[
       className,
@@ -28,50 +30,64 @@ mixin button(className, text)
     ]
     type='button',
   )
-    span(class=`${className}__button-legend`)= text
+    block
 
+//- <div> BEM-element
 
-//- Generates BEM-elements
-//- ======================
-
-//- <div> BEM-elements
-
-mixin __div(parent, elementName)
+mixin __div(parent, elementSubname)
   div(class=[
-    `${parent}__${elementName}`,
+    `${parent}__${elementSubname}`,
     attributes.class,
   ])
     block
 
+//- <span> BEM-element
+
+mixin __span(parent, elementSubname)
+  span(class=[
+    `${parent}__${elementSubname}`,
+    attributes.class,
+  ])
+    block
+
+//- <h1>...<h6> BEM-elements
+
 mixin __heading(parent, size)
+  - const className = `${parent}__heading`;
   case size
     when 1
-      h1(class=`${parent}__heading`)
+      h1(class=className)
         block
     when 2
     default
-      h2(class=`${parent}__heading`)
+      h2(class=className)
         block
     when 3
-      h3(class=`${parent}__heading`)
+      h3(class=className)
         block
     when 4
-      h4(class=`${parent}__heading`)
+      h4(class=className)
+        block
+    when 5
+      h5(class=className)
+        block
+    when 6
+      h6(class=className)
         block
 
-//- <section> BEM-elements
+//- <section> BEM-element
 
 mixin __section(parent, elementName)
   section(class=`${parent}__${elementName}`)
     block
 
-//- <ul> BEM-elements
+//- <ul> BEM-element
 
-mixin __list(parent)
-  ul(class=`${parent}__list`)
+mixin __ul(parent, elementName)
+  ul(class=`${parent}__${elementName}`)
     block
 
-//- <button> BEM-elements
+//- <button> BEM-element
 
 mixin __button(parent)
   button(

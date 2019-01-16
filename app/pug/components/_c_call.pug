@@ -1,3 +1,4 @@
-mixin call()
-  - const blockClassname = 'call';
-  +button(blockClassname, 'Нажмите, чтобы позвонить нам')
+mixin call-button()
+  - const blockClassname = 'call-button';
+  +button(blockClassname)
+      +__span(blockClassname, 'legend') Нажмите, чтобы позвонить нам

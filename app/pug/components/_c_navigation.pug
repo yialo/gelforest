@@ -2,7 +2,7 @@ mixin navigation(pageId)
   - const blockClassname = 'navigation';
   nav(class=blockClassname)
     +__heading(blockClassname, 2) Карта сайта
-    +__list(blockClassname)
+    +__ul(blockClassname, 'list')
       each item in navigationList_data
         each value, key in item
           li(class=`${blockClassname}__item`)

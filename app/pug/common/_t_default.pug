@@ -14,14 +14,18 @@ html(lang='ru')
   body.page(
     class=`page--${page.id}`
   )
-    +page-header({ id: page.id })(
+    +page-header({
+      id: page.id,
+    })(
       class=[
         'page__header',
         jsMenuClassname,
       ]
     )
     main.page__main
-    +page-footer({ id: page.id })(class='page__footer')
+    +page-footer({
+      id: page.id,
+    })(class='page__footer')
     script(src='js/jquery-3.3.1.js')
     script(src='js/uplink.js')
     block current-page-scripts

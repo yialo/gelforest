@@ -19,7 +19,7 @@ mixin contacts()
           != contactsItem_options.content
   +div(blockClassname)
     +__heading(blockClassname, 2) Контакты
-    +__list(blockClassname)
+    +__ul(blockClassname, 'list')
       each value, key in contactsList_data
         +contacts__item({
           modifier: key,
