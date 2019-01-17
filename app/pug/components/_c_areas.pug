@@ -1,10 +1,19 @@
 mixin areas()
   section.areas(class=attributes.class)
     .areas__container
-      h2.areas__heading Типы услуг
+      h2.areas__heading Программы
       ul.areas__list
         mixin areas__item(areasItem_props)
-          li.areas__item= areasItem_props.text
-        each item in areasItems_data
-          +areas__item({ text: item })
+          li.areas__item
+            a.areas__link(
+              class=`areas__link--${areasItem_props.modifier}`
+            )
+              h3.areas__headline= areasItem_props.headling
             block
+        each item in areasList_data
+          - let [modifier, text] = item;
+          +areas__item({
+            modifier: modifier,
+            text: text,
+          })
+            +services(text)

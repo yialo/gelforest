@@ -1,2 +1,19 @@
-mixin services()
-  .services
+mixin services(servicesTitle)
+  h3.services__headline= servicesTitle
+  ul.services
+    mixin services__item(servicesItem_props)
+      li.services__item(
+        class=`services__item--${servicesItem_props.index + 1}`
+      )
+        span.services__title= servicesItem_props.title
+        = ' '
+        span.services__price (#{servicesItem_props.price}руб.)
+        block
+    each item, index in servicesList_data
+      - let [title, price] = item;
+      +services__item({
+        index: index,
+        title: title,
+        price: price,
+      })
+        +service-schedule()
