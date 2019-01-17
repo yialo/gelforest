@@ -1,0 +1,10 @@
+mixin areas()
+  section.areas(class=attributes.class)
+    .areas__container
+      h2.areas__heading Типы услуг
+      ul.areas__list
+        mixin areas__item(areasItem_props)
+          li.areas__item= areasItem_props.text
+        each item in areasItems_data
+          +areas__item({ text: item })
+            block

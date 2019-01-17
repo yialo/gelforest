@@ -3,7 +3,7 @@ mixin page-header(currentPageId)
     +logo().page-header__logo
     .page-header__call-button(class=`${jsMenuClass}__call-button`)
       +call-button()
-    .page-header__menu-button
-      +menu-button()
-    +services().page-header__services
+    .page-header__menu-buttons
+      +menu-buttons()
+    +areas().page-header__areas
     +interesting().page-header__interesting
