@@ -10,9 +10,11 @@ doctype html
 html(lang='ru')
   +head({ title: page.title })
   body.page(class=`page--${page.id}`)
-    +page-header(page.id).page__header(class=jsMenuClass)
+    include _t_components
+    +page-header(page.id).page__header
     main.page__main
     +page-footer(page.id).page__footer
+    script(src='js/header-menu.js')
     script(src='js/jquery-3.3.1.js')
     script(src='js/uplink.js')
     block current-page-scripts

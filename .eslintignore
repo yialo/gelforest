@@ -2,5 +2,5 @@
 .vscode/
 build/
 node_modules/
-source/js/vendors/
+app/js/vendors/
 uplink.js

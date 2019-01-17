@@ -1,0 +1,33 @@
+template#areas
+  section.areas
+    .areas__container
+      h2.areas__heading Программы
+      ul.areas__list
+        - for (let i = 1; i <= 6; i++)
+          li.areas__item(class=`areas__item--${i}`)
+            a.areas__link(href='#')
+              h3.areas__headline
+            .areas__item-content
+
+template#services
+  .services
+    .services__container
+      h3.services__headline
+      ul.services__list
+        - for (let i = 1; i <= 4; i++)
+          li.services__item(class=`services__item--${i}`)
+            a.services__link(href='#')
+              span.services__title
+              = ' '
+              span.services__price
+            .services__content
+
+template#service-schedule-template
+  .service-schedule
+    .service-schedule__container
+      h4.service-schedule
+      ul.service-schedule__list
+        - for (let i = 1; i <= 3; i++)
+          li.service-schedule__item
+            a.service-schedule__link(class=`service-schedule__link--${i}`)
+              span.services-schedule__legend Показать описание
