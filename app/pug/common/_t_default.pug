@@ -8,24 +8,11 @@ include _i_components.pug
 
 doctype html
 html(lang='ru')
-  +head({
-    title: page.title,
-  })
-  body.page(
-    class=`page--${page.id}`
-  )
-    +page-header({
-      id: page.id,
-    })(
-      class=[
-        'page__header',
-        jsMenuClassname,
-      ]
-    )
+  +head({ title: page.title })
+  body.page(class=`page--${page.id}`)
+    +page-header(page.id).page__header(class=jsMenuClass)
     main.page__main
-    +page-footer({
-      id: page.id,
-    })(class='page__footer')
+    +page-footer(page.id).page__footer
     script(src='js/jquery-3.3.1.js')
     script(src='js/uplink.js')
     block current-page-scripts

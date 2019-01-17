@@ -1,16 +1,15 @@
-mixin navigation(pageId)
-  - const blockClassname = 'navigation';
-  nav(class=blockClassname)
-    +__heading(blockClassname, 2) Карта сайта
-    +__ul(blockClassname, 'list')
-      each item in navigationList_data
-        each value, key in item
-          li(class=`${blockClassname}__item`)
-            a(
+mixin navigation(currentPageId)
+  section.navigation(class=attributes.class)
+    nav.navigation__container
+      h2.navigation__heading Карта сайта
+      ul.navigation__list
+        each item in navigationList_data
+          - let [modifier, text] = item;
+          li.navigation__item
+            a.navigation__link(
               class=[
-                `${blockClassname}__link`,
-                `${blockClassname}__link--${key}`,
-                ( key === pageId ? 'is-current' : null ),
+                `navigation__link--${modifier}`,
+                modifier === currentPageId ? 'is-current' : null,
               ]
-              href=( key === pageId ? null : `${key}.html` )
-            )= value
+              href= (modifier === currentPageId ? null : `${modifier}.html`)
+            )= text

@@ -1,17 +1,11 @@
 mixin head(head_options)
-  -
-    const head_defaultOptions = {
-      title: 'Главная',
-    };
+  - const head_defaultOptions = { title: 'Главная' };
   +setDefaults(head_options, head_defaultOptions)
   head
     meta(charset='utf-8')
     title #{head_options.title} | #{siteName}
     each value, key in metaData
-      meta(
-        name=key
-        content=value
-      )
+      meta(name=key content=value)
     link(
       rel='preload'
       href=`fonts/${fontProperties.familyName}-${fontProperties.weightName}-${fontProperties.styleName}.woff2`

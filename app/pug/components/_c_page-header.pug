@@ -1,17 +1,9 @@
-mixin page-header(pageHeader_options)
-  - const blockClassname = 'page-header';
-  header(
-    class=[
-      blockClassname,
-      `${blockClassname}--${pageHeader_options.id}`,
-      attributes.class,
-    ]
-  )
-    +__div(blockClassname, 'logo')
-      +logo()
-    +__div(blockClassname, 'call-button')(class=`${jsMenuClassname}__call-button`)
+mixin page-header(currentPageId)
+  header.page-header(class=[`page-header--${currentPageId}`, attributes.class])
+    +logo().page-header__logo
+    .page-header__call-button(class=`${jsMenuClass}__call-button`)
       +call-button()
-    +__div(blockClassname, 'menu-button')
+    .page-header__menu-button
       +menu-button()
-    +__section(blockClassname, 'services')
-    +__section(blockClassname, 'interesting')
+    +services().page-header__services
+    +interesting().page-header__interesting

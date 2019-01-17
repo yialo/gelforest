@@ -1,7 +1,3 @@
 mixin copyright()
-  - const blockClassname = 'copyright';
-  +div(blockClassname)
-    a(
-      class=`${blockClassname}__link`
-      href='https://www.waytostart.ru/'
-    ) Разработка сайта веб-студия #[+__span(blockClassname, 'string') WayToStart]
+  .copyright(class=attributes.class)
+    a.copyright__link(href='https://www.waytostart.ru/') Разработка сайта веб-студия #[span.copyright__string WayToStart]

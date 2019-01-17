@@ -1,17 +1,12 @@
 mixin socials()
-  - const blockClassname = 'socials';
-  div(class=blockClassname)
-    +__heading(blockClassname, 2) Мы в социальных сетях
-    +__ul(blockClassname, 'list')
-      each value in socialsList_data
-        - let modifier, text;
-        - [modifier, text] = value
-        li(class=`${blockClassname}__item`)
-          a(
-            class=[
-              `${blockClassname}__link`,
-              `${blockClassname}__link--${modifier}`,
-            ]
+  section.socials(class=attributes.class)
+    h2.socials__heading Мы в социальных сетях
+    ul.socials__list
+      each item in socialsList_data
+        - let [modifier, text] = item;
+        li.socials__item
+          a.socials__link(
+            class=`socials__link--${modifier}`
             href=`https://${modifier}.com/`
           )
-            +__span(blockClassname, 'legend')= text
+            span.socials__link__legend= text

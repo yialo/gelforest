@@ -1,28 +1,19 @@
 mixin contacts()
-  - const blockClassname = 'contacts';
-  mixin contacts__item(contactsItem_options)
-    li(
-      class=[
-        `${blockClassname}__item`,
-        `${blockClassname}__item--${contactsItem_options.modifier}`,
-      ]
-    )
-      case contactsItem_options.modifier
-        when 'tel'
-        when 'email'
-          a(
-            class=`${blockClassname}__link`
-            href=contactsItem_options.link
-          )
-            = contactsItem_options.content
-        when 'address'
-          != contactsItem_options.content
-  +div(blockClassname)
-    +__heading(blockClassname, 2) Контакты
-    +__ul(blockClassname, 'list')
-      each value, key in contactsList_data
-        +contacts__item({
-          modifier: key,
-          content: value.text,
-          link: value.link,
-        })
+  section.contacts(class=attributes.class)
+    .contacts__container
+      h2.contacts__heading Контакты
+      ul.contacts__list
+        mixin contacts__item(contactsItem_props)
+          li.contacts__item(class=`contacts__item--${contactsItem_props.modifier}`)
+            case contactsItem_props.modifier
+              when 'tel'
+              when 'email'
+                a.contacts__link(href=contactsItem_props.link)= contactsItem_props.content
+              when 'address'
+                != contactsItem_props.content
+        each value, key in contactsList_data
+          +contacts__item({
+            modifier: key,
+            content: value.text,
+            link: value.link,
+          })

@@ -1,19 +1,7 @@
-mixin page-footer(pageFooter_options)
-  - const blockClassname = 'page-footer';
-  footer(
-    class=[
-      blockClassname,
-      `${blockClassname}--${pageFooter_options.id}`,
-      attributes.class,
-    ]
-  )
-    +__section(blockClassname, 'navigation')
-      +navigation(pageFooter_options.id)
-    +__section(blockClassname, 'contacts')
-      +contacts()
-    +__section(blockClassname, 'socials')
-      +socials()
-    +__div(blockClassname, 'copyright')
-      +copyright()
-    +__div(blockClassname, 'uplink')
-      +uplink()
+mixin page-footer(currentPageId)
+  footer.page-footer(class=[`page-footer--${currentPageId}`, attributes.class])
+    +navigation(currentPageId).page-footer__navigation
+    +contacts().page-footer__contacts
+    +socials().page-footer__socials
+    +copyright().page-footer__copyright
+    +uplink().page-footer__uplink
