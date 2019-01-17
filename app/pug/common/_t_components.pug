@@ -1,15 +1,4 @@
-template#areas
-  section.areas
-    .areas__container
-      h2.areas__heading Программы
-      ul.areas__list
-        - for (let i = 1; i <= 6; i++)
-          li.areas__item(class=`areas__item--${i}`)
-            a.areas__link(href='#')
-              h3.areas__headline
-            .areas__item-content
-
-template#services
+template#services-template
   .services
     .services__container
       h3.services__headline

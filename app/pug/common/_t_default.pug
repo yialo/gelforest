@@ -10,10 +10,10 @@ doctype html
 html(lang='ru')
   +head({ title: page.title })
   body.page(class=`page--${page.id}`)
-    include _t_components
     +page-header(page.id).page__header
     main.page__main
     +page-footer(page.id).page__footer
+    include _t_components
     script(src='js/header-menu.js')
     script(src='js/jquery-3.3.1.js')
     script(src='js/uplink.js')
