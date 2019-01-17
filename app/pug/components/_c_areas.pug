@@ -7,13 +7,10 @@ mixin areas()
           li.areas__item
             a.areas__link(
               class=`areas__link--${areasItem_props.modifier}`
+              href='#'
             )
               h3.areas__headline= areasItem_props.headling
-            block
-        each item in areasList_data
-          - let [modifier, text] = item;
-          +areas__item({
-            modifier: modifier,
-            text: text,
-          })
-            +services(text)
+            .areas__item-content
+              block
+
+
