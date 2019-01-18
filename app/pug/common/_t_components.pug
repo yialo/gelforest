@@ -7,9 +7,10 @@ template#services-template
           li.services__item(class=`services__item--${i}`)
             a.services__link(href='#')
               span.services__title
-              = ' '
+              = ' ('
               span.services__price
-            .services__content
+              = 'руб.)'
+            .services__item-content
 
 template#service-schedule-template
   .service-schedule

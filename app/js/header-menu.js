@@ -16,11 +16,22 @@ const servicesData = [
 
 const headerMenu = document.querySelector('.page-header__areas');
 const areasItemContentElements = headerMenu.querySelectorAll('.areas__item-content');
-const servicesElementTemplate = document.querySelector('#services-template').content.querySelector('.services');
 
-for (let i = 0; i < areasItemContentElements.length; i++) {
+const servicesElementTemplate = document.querySelector('#services-template').content.querySelector('.services');
+// const servicesScheduleElementTemplate = document.querySelector('#service-schedule-template');
+
+areasData.forEach((arrValue, arrIndex) => {
   const servicesElement = servicesElementTemplate.cloneNode(true);
   const servicesElementHeadline = servicesElement.querySelector('.services__headline');
-  servicesElementHeadline.textContent = 'Test';
-  areasItemContentElements[i].appendChild(servicesElement);
-}
+  const servicesItemElements = servicesElement.querySelectorAll('.services__item');
+
+  servicesElementHeadline.textContent = arrValue;
+
+  servicesData.forEach((value, index) => {
+    const [title, price] = value;
+    servicesItemElements[index].querySelector('.services__title').textContent = title;
+    servicesItemElements[index].querySelector('.services__price').textContent = price;
+  });
+
+  // areasItemContentElements[arrIndex].appendChild(servicesElement);
+});
