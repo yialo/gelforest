@@ -20,77 +20,83 @@ const zopfli = require('imagemin-zopfli');
 // Task functions
 
 const minsvg = function mimimizeSvgImages() {
-  return gulp.src('./spec/img-raw/*.svg')
-    .pipe(minimage([
-      minimage.svgo({
-        plugins: [
-          { addAttributesToSVGElement: false },
-          { addClassesToSVGElement: false },
-          { cleanupAttrs: false },
-          { cleanupEnableBackground: true },
-          { cleanupIDs: false },
-          { cleanupListOfValues: true },
-          { cleanupNumericValues: true },
-          { collapseGroups: true },
-          { convertColors: true },
-          { convertPathData: true },
-          { convertShapeToPath: false },
-          { convertStyleToAttrs: false },
-          { convertTransform: true },
-          { inlineStyles: false },
-          { mergePaths: true },
-          { minifyStyles: false },
-          { moveElemsAttrsToGroup: true },
-          { moveGroupAttrsToElems: false },
-          { prefixIds: false },
-          { removeAttrs: true },
-          { removeComments: true },
-          { removeDesc: true },
-          { removeDimensions: true },
-          { removeDoctype: true },
-          { removeEditorsNSData: true },
-          { removeElementsByAttr: false },
-          { removeEmptyAttrs: true },
-          { removeEmptyContainers: true },
-          { removeEmptyText: true },
-          { removeHiddenElems: true },
-          { removeMetadata: true },
-          { removeNonInheritableGroupAttrs: true },
-          { removeRasterimg: false },
-          { removeScriptElement: true },
-          { removeStyleElement: true },
-          { removeTitle: true },
-          { removeUnknownsAndDefaults: true },
-          { removeUnusedNS: true },
-          { removeUselessDefs: false },
-          { removeUselessStrokeAndFill: true },
-          { removeViewBox: false },
-          { removeXMLNS: false },
-          { removeXMLProcInst: true },
-          { sortAttrs: false },
-        ],
-      }),
-    ]))
+  return gulp
+    .src('./spec/img-raw/*.svg')
+    .pipe(
+      minimage([
+        minimage.svgo({
+          plugins: [
+            { addAttributesToSVGElement: false },
+            { addClassesToSVGElement: false },
+            { cleanupAttrs: false },
+            { cleanupEnableBackground: true },
+            { cleanupIDs: false },
+            { cleanupListOfValues: true },
+            { cleanupNumericValues: true },
+            { collapseGroups: true },
+            { convertColors: true },
+            { convertPathData: true },
+            { convertShapeToPath: false },
+            { convertStyleToAttrs: false },
+            { convertTransform: true },
+            { inlineStyles: false },
+            { mergePaths: true },
+            { minifyStyles: false },
+            { moveElemsAttrsToGroup: true },
+            { moveGroupAttrsToElems: false },
+            { prefixIds: false },
+            { removeAttrs: true },
+            { removeComments: true },
+            { removeDesc: true },
+            { removeDimensions: true },
+            { removeDoctype: true },
+            { removeEditorsNSData: true },
+            { removeElementsByAttr: false },
+            { removeEmptyAttrs: true },
+            { removeEmptyContainers: true },
+            { removeEmptyText: true },
+            { removeHiddenElems: true },
+            { removeMetadata: true },
+            { removeNonInheritableGroupAttrs: true },
+            { removeRasterimg: false },
+            { removeScriptElement: true },
+            { removeStyleElement: true },
+            { removeTitle: true },
+            { removeUnknownsAndDefaults: true },
+            { removeUnusedNS: true },
+            { removeUselessDefs: false },
+            { removeUselessStrokeAndFill: true },
+            { removeViewBox: false },
+            { removeXMLNS: false },
+            { removeXMLProcInst: true },
+            { sortAttrs: false },
+          ],
+        }),
+      ]),
+    )
     .pipe(gulp.dest('./app/img/'));
 };
 
 const minbitmap = function minimizeBitmapImages() {
-  return gulp.src('./spec/img-raw/*.{jpg,png}')
-    .pipe(minimage([
-      pngquant({
-        speed: 1,
-        quality: 80,
-      }),
-      zopfli({
-        more: true,
-      }),
-      minimage.jpegtran({
-        progressive: true,
-      }),
-      mozjpeg({
-        quality: 90,
-      }),
-    ]))
+  return gulp
+    .src('./spec/img-raw/*.{jpg,png}')
+    .pipe(
+      minimage([
+        pngquant({
+          speed: 1,
+          quality: 80,
+        }),
+        zopfli({
+          more: true,
+        }),
+        minimage.jpegtran({
+          progressive: true,
+        }),
+        mozjpeg({
+          quality: 90,
+        }),
+      ]),
+    )
     .pipe(gulp.dest('./app/img/'));
 };
 
@@ -99,42 +105,35 @@ const cleanbuild = function deleteFormerBuildFolder() {
 };
 
 const copyvideo = function copyVideoFilesToBuildFolder() {
-  return gulp.src('./app/video/*.mp4')
-    .pipe(gulp.dest('./dist/video/'));
+  return gulp.src('./app/video/*.mp4').pipe(gulp.dest('./dist/video/'));
 };
 
 const copyfonts = function copyFontFilesToBuildFolder() {
-  return gulp.src('./app/fonts/*.{woff,woff2}')
-    .pipe(gulp.dest('./dist/fonts/'));
+  return gulp.src('./app/fonts/*.{woff,woff2}').pipe(gulp.dest('./dist/fonts/'));
 };
 
 const copysvg = function copySvgImagesToBuildFolder() {
-  return gulp.src('./app/img/*.svg')
-    .pipe(gulp.dest('./dist/img/'));
+  return gulp.src('./app/img/*.svg').pipe(gulp.dest('./dist/img/'));
 };
 
 const copybitmap = function copyBitmapImagesToBuildFolder() {
-  return gulp.src('./app/img/*.{jpg,png}')
-    .pipe(gulp.dest('./dist/img/'));
+  return gulp.src('./app/img/*.{jpg,png}').pipe(gulp.dest('./dist/img/'));
 };
 
 const scripts = function launchJsCompiler() {
-  return gulp.src([
-    './app/js/*.js',
-    './app/js/vendors/*.js',
-  ])
+  return gulp
+    .src(['./app/js/vendors/*.js', './app/js/jquery/*.js', './app/js/*.js'])
     .pipe(minjs())
     .pipe(gulp.dest('./dist/js/'));
 };
 
 const style = function launchCssCompiler() {
-  return gulp.src('./app/sass/main.scss')
+  return gulp
+    .src('./app/sass/main.scss')
     .pipe(plumber())
     .pipe(sassglob())
     .pipe(sass())
-    .pipe(postcss([
-      autoprefixer(),
-    ]))
+    .pipe(postcss([autoprefixer()]))
     .pipe(gulp.dest('./dist/css/'))
     .pipe(mincss())
     .pipe(rename('main.min.css'))
@@ -143,7 +142,8 @@ const style = function launchCssCompiler() {
 };
 
 const html = function launchHtmlCompiler() {
-  return gulp.src('./app/pug/*.pug')
+  return gulp
+    .src('./app/pug/*.pug')
     .pipe(plumber())
     .pipe(pug())
     .pipe(gulp.dest('./dist/'))
@@ -164,12 +164,24 @@ const serve = function launchBrowserSync() {
 
 // Gulp tasks
 
-gulp.task('build', gulp.series(cleanbuild, gulp.parallel(copyfonts, copyvideo, copysvg, copybitmap), scripts, style, html));
+gulp.task(
+  'build',
+  gulp.series(
+    cleanbuild,
+    gulp.parallel(copyfonts, copyvideo, copysvg, copybitmap),
+    scripts,
+    style,
+    html,
+  ),
+);
 gulp.task('serve', serve);
 
 gulp.task('imagemin', gulp.parallel(minsvg, minbitmap));
 gulp.task('imagecopy', gulp.parallel(copysvg, copybitmap));
-gulp.task('imagerenew', gulp.series(gulp.parallel(minsvg, minbitmap), gulp.parallel(copysvg, copybitmap)));
+gulp.task(
+  'imagerenew',
+  gulp.series(gulp.parallel(minsvg, minbitmap), gulp.parallel(copysvg, copybitmap)),
+);
 
 gulp.task('svgmin', minsvg);
 gulp.task('svgcopy', copysvg);

@@ -1,11 +1,4 @@
-const areasData = [
-  'Джиппинг',
-  'Яхты',
-  'Парашют',
-  'Дайвинг',
-  'Квадроциклы',
-  'Экскурсии',
-];
+const areasData = ['Джиппинг', 'Яхты', 'Парашют', 'Дайвинг', 'Квадроциклы', 'Экскурсии'];
 
 const servicesData = [
   ['Тайны Геленджика', 1000],
@@ -17,7 +10,9 @@ const servicesData = [
 const headerMenu = document.querySelector('.page-header__areas');
 const areasItemContentElements = headerMenu.querySelectorAll('.areas__item-content');
 
-const servicesElementTemplate = document.querySelector('#services-template').content.querySelector('.services');
+const servicesElementTemplate = document
+  .querySelector('#services-template')
+  .content.querySelector('.services');
 // const servicesScheduleElementTemplate = document.querySelector('#service-schedule-template');
 
 areasData.forEach((arrValue, arrIndex) => {

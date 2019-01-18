@@ -1,6 +1,6 @@
 .git/
 .vscode/
-build/
 node_modules/
+dist/
+app/js/jquery
 app/js/vendors/
-uplink.js
