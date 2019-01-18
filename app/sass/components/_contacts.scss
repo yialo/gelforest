@@ -1,0 +1,43 @@
+.contacts {
+  @include page-footer-shadow();
+  background-color: $light-gray;
+}
+
+.contacts__container {
+  @include margin-hor();
+  max-width: $page-footer-s-max-width;
+  padding: 32px 10px;
+}
+
+.contacts__heading {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.contacts__list {
+  @include list();
+  display: grid;
+  grid-row-gap: 24px;
+}
+
+.contacts__item {
+  position: relative;
+  padding-left: 40px;
+  font-size: 16px;
+
+  @each $modifier, $icon-title, $icon-width, $icon-height in $contacts-item-modifiers {
+    &--#{$modifier}::before {
+      content: "";
+      position: absolute;
+      top: calc((100% - #{$icon-height}) / 2);
+      left: 0;
+      width: 18px;
+      height: $icon-height;
+      background-image: url("../img/contacts--#{$icon-title}.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: $icon-width $icon-height;
+    }
+  }
+}

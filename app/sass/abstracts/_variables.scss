@@ -6,6 +6,10 @@
 // ===============
 
 $s-min-width: 320px;
+$page-footer-s-max-width: 767px;
+$page-footer-m-min-width: 768px;
+$page-header-s-max-width: 1024px;
+$page-header-m-min-width: 1025px;
 
 // Typography
 // ==========
@@ -23,6 +27,21 @@ $font-properties: (
 
 $light-blue: #f8fff7;
 $light-gray: #f5f5f5;
+$copyright-gray: #9a9a9a;
 
 // Various
 // =======
+
+$socials-link-modifiers: (
+  (vk, 20px, 20px),
+  (facebook, 20px, 20px),
+  (twitter, 20px, 20px),
+  (instagram, 20px, 20px),
+  (youtube, 24px, 17px),
+);
+
+$contacts-item-modifiers: (
+  (tel, phone, 16px, 16px),
+  (address, marker, 13px, 18px),
+  (email, envelope, 18px, 15px),
+);

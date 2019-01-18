@@ -1,0 +1,18 @@
+.copyright {
+  @include page-footer-shadow(-1px);
+}
+
+.copyright__container {
+  @include margin-hor();
+  max-width: $page-footer-s-max-width;
+  padding: 6px 10px 4px;
+  text-align: center;
+}
+
+.copyright__link {
+  color: $copyright-gray;
+}
+
+.copyright__string {
+  text-transform: uppercase;
+}

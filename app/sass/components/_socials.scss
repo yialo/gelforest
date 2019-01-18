@@ -1,0 +1,38 @@
+.socials {
+  padding: 18px 40px 18px 10px;
+}
+
+.socials__heading {
+  @include accessible-hiding();
+}
+
+.socials__list {
+  @include list();
+  @include margin-hor();
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.socials__item {
+  display: flex;
+  align-items: center;
+}
+
+.socials__link {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+
+  @each $modifier, $width, $height in $socials-link-modifiers {
+    &--#{$modifier} {
+      width: $width;
+      height: $height;
+      background-image: url("../img/socials--#{$modifier}.svg");
+    }
+  }
+}
+
+.socials__link__legend {
+  @include accessible-hiding();
+}

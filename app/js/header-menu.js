@@ -22,10 +22,7 @@ const servicesElementTemplate = document.querySelector('#services-template').con
 
 areasData.forEach((arrValue, arrIndex) => {
   const servicesElement = servicesElementTemplate.cloneNode(true);
-  const servicesElementHeadline = servicesElement.querySelector('.services__headline');
   const servicesItemElements = servicesElement.querySelectorAll('.services__item');
-
-  servicesElementHeadline.textContent = arrValue;
 
   servicesData.forEach((value, index) => {
     const [title, price] = value;

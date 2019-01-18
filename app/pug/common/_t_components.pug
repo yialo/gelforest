@@ -1,7 +1,6 @@
 template#services-template
   .services
     .services__container
-      h3.services__headline
       ul.services__list
         - for (let i = 1; i <= 4; i++)
           li.services__item(class=`services__item--${i}`)
@@ -15,7 +14,6 @@ template#services-template
 template#service-schedule-template
   .service-schedule
     .service-schedule__container
-      h4.service-schedule
       ul.service-schedule__list
         - for (let i = 1; i <= 3; i++)
           li.service-schedule__item
