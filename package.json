@@ -1,12 +1,9 @@
 {
-  "name": "gelforest",
-  "version": "1.0.0",
-  "private": true,
   "author": "WayToStart",
-  "license": "ISC",
-  "main": "gulpfile.js",
+  "browserslist": [
+    "last 2 versions"
+  ],
   "devDependencies": {
-    "@htmlacademy/editorconfig-cli": "1.0.0",
     "autoprefixer": "9.4.3",
     "browser-sync": "2.26.3",
     "del": "3.0.0",
@@ -30,21 +27,23 @@
     "imagemin-pngquant": "6.0.1",
     "imagemin-zopfli": "5.1.0",
     "prettier": "1.15.3",
+    "prettier-eslint": "8.8.2",
     "stylelint": "9.10.0",
     "stylelint-scss": "3.5.1"
   },
-  "scripts": {
-    "editorconfig": "editorconfig-cli",
-    "eslint": "eslint \"source/js/**/*.js\"",
-    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
-    "test": "npm run editorconfig && npm run stylelint",
-    "build": "gulp build",
-    "start": "npm run build && gulp serve"
-  },
-  "browserslist": [
-    "last 2 versions"
-  ],
   "engines": {
     "node": "8.11.4"
-  }
+  },
+  "license": "ISC",
+  "main": "gulpfile.js",
+  "name": "gelforest",
+  "private": true,
+  "scripts": {
+    "build": "gulp build",
+    "eslint": "eslint \"app/js/**/*.js\"",
+    "start": "npm run build && gulp serve",
+    "stylelint": "stylelint \"app/sass/**/*.scss\" --syntax scss",
+    "test": "npm run stylelint && npm run eslint"
+  },
+  "version": "1.0.0"
 }

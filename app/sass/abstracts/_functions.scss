@@ -12,11 +12,7 @@
 // $type (string, even | odd | all): iteration type.
 //
 
-@function create-numerated-list(
-  $first: 1,
-  $last: 5,
-  $type: all,
-) {
+@function create-numerated-list($first: 1, $last: 5, $type: all) {
   $numbers: ();
 
   @for $number from $first through $last {

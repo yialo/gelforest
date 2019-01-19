@@ -1,4 +1,13 @@
-const areasData = ['Джиппинг', 'Яхты', 'Парашют', 'Дайвинг', 'Квадроциклы', 'Экскурсии'];
+'use strict';
+
+const areasData = [
+  'Джиппинг',
+  'Яхты',
+  'Парашют',
+  'Дайвинг',
+  'Квадроциклы',
+  'Экскурсии',
+];
 
 const servicesData = [
   ['Тайны Геленджика', 1000],
@@ -8,22 +17,35 @@ const servicesData = [
 ];
 
 const headerMenu = document.querySelector('.page-header__areas');
-const areasItemContentElements = headerMenu.querySelectorAll('.areas__item-content');
+const areasItemContentElements = headerMenu.querySelectorAll(
+  '.areas__item-content',
+);
 
 const servicesElementTemplate = document
   .querySelector('#services-template')
   .content.querySelector('.services');
-// const servicesScheduleElementTemplate = document.querySelector('#service-schedule-template');
+/*
+const servicesScheduleElementTemplate = document
+.querySelector('#service-schedule-template');
+*/
 
 areasData.forEach((arrValue, arrIndex) => {
   const servicesElement = servicesElementTemplate.cloneNode(true);
-  const servicesItemElements = servicesElement.querySelectorAll('.services__item');
+  const servicesItemElements = servicesElement.querySelectorAll(
+    '.services__item',
+  );
 
   servicesData.forEach((value, index) => {
     const [title, price] = value;
-    servicesItemElements[index].querySelector('.services__title').textContent = title;
-    servicesItemElements[index].querySelector('.services__price').textContent = price;
+    servicesItemElements[index].querySelector(
+      '.services__title',
+    ).textContent = title;
+    servicesItemElements[index].querySelector(
+      '.services__price',
+    ).textContent = price;
   });
 
   // areasItemContentElements[arrIndex].appendChild(servicesElement);
 });
+
+services.addEventListener(function() {});

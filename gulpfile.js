@@ -1,3 +1,5 @@
+'use strict';
+
 // Variables
 
 const autoprefixer = require('autoprefixer');
@@ -109,7 +111,9 @@ const copyvideo = function copyVideoFilesToBuildFolder() {
 };
 
 const copyfonts = function copyFontFilesToBuildFolder() {
-  return gulp.src('./app/fonts/*.{woff,woff2}').pipe(gulp.dest('./dist/fonts/'));
+  return gulp
+    .src('./app/fonts/*.{woff,woff2}')
+    .pipe(gulp.dest('./dist/fonts/'));
 };
 
 const copysvg = function copySvgImagesToBuildFolder() {
@@ -158,8 +162,8 @@ const serve = function launchBrowserSync() {
     server: { baseDir: './dist/' },
   });
   gulp.watch('./app/js/**/*.js', scripts).on('change', browserSync.reload);
-  gulp.watch('./app/sass/**/*.scss', style);
   gulp.watch('./app/pug/**/*.pug', html);
+  gulp.watch('./app/sass/**/*.scss', style);
 };
 
 // Gulp tasks
@@ -180,7 +184,10 @@ gulp.task('imagemin', gulp.parallel(minsvg, minbitmap));
 gulp.task('imagecopy', gulp.parallel(copysvg, copybitmap));
 gulp.task(
   'imagerenew',
-  gulp.series(gulp.parallel(minsvg, minbitmap), gulp.parallel(copysvg, copybitmap)),
+  gulp.series(
+    gulp.parallel(minsvg, minbitmap),
+    gulp.parallel(copysvg, copybitmap),
+  ),
 );
 
 gulp.task('svgmin', minsvg);
