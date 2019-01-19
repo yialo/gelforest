@@ -47,5 +47,3 @@ areasData.forEach((arrValue, arrIndex) => {
 
   // areasItemContentElements[arrIndex].appendChild(servicesElement);
 });
-
-services.addEventListener(function() {});
