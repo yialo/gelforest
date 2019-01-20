@@ -23,7 +23,6 @@
       }
     ],
     "no-alert": "error",
-    "no-console": "error",
-    "no-plusplus": "off"
+    "no-console": "error"
   }
 }
