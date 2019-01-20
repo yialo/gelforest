@@ -1,7 +1,7 @@
 * text eol=lf
 
-*.jpg binary
 *.jpeg binary
+*.jpg binary
 *.mp4 binary
 *.png binary
 *.webp binary

@@ -1,12 +1,5 @@
-# Project output folder
-dist/
-
-# Project specification folder
-spec/
-
-# Log files
 *.log
-
-# Node.js modules
+dist/
 node_modules/
 npm-debug.*
+spec/
