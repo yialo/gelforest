@@ -16,32 +16,39 @@ const servicesData = [
   ['Ночной Геленджик', 1000],
 ];
 
-const headerMenu = document.querySelector('.page-header__areas');
-const areasItemContentElements = headerMenu.querySelectorAll(
-  '.areas__item-content',
+const pageHeader = document.querySelector('.js-header-menu');
+const areasMenuButton = pageHeader.querySelector(
+  '.js-header-menu__button',
 );
 
-const servicesElementTemplate = document
-  .querySelector('#services-template')
-  .content.querySelector('.services');
-/*
-const servicesScheduleElementTemplate = document
-.querySelector('#service-schedule-template');
-*/
+pageHeader.classList.remove('no-js');
+pageHeader.classList.add('is-hidden');
 
-areasData.forEach((arrValue, arrIndex) => {
-  const servicesElement = servicesElementTemplate.cloneNode(true);
-  const servicesItemElements = servicesElement.querySelectorAll(
-    '.services__item',
-  );
-
-  servicesData.forEach((value, index) => {
-    const [title, price] = value;
-    servicesItemElements[index].querySelector('.services__title')
-      .textContent = title;
-    servicesItemElements[index].querySelector('.services__price')
-      .textContent = price;
-  });
-
-  // areasItemContentElements[arrIndex].appendChild(servicesElement);
+areasMenuButton.addEventListener('click', () => {
+  pageHeader.classList.toggle('is-hidden');
 });
+
+// const servicesElementTemplate = document
+//   .querySelector('#services-template')
+//   .content.querySelector('.services');
+// /*
+// const servicesScheduleElementTemplate = document
+// .querySelector('#service-schedule-template');
+// */
+
+// areasData.forEach((arrValue, arrIndex) => {
+//   const servicesElement = servicesElementTemplate.cloneNode(true);
+//   const servicesItemElements = servicesElement.querySelectorAll(
+//     '.services__item',
+//   );
+
+//   servicesData.forEach((value, index) => {
+//     const [title, price] = value;
+//     servicesItemElements[index].querySelector('.services__title')
+//       .textContent = title;
+//     servicesItemElements[index].querySelector('.services__price')
+//       .textContent = price;
+//   });
+
+//   // areasItemContentElements[arrIndex].appendChild(servicesElement);
+// });

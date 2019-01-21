@@ -3,11 +3,12 @@ mixin page-header(currentPageId)
     `page-header--${currentPageId}`,
     attributes.class,
     jsMenuClass,
+    'no-js',
   ])
-    +logo().page-header__logo(class=`${jsMenuClass}__logo`)
+    +logo(currentPageId).page-header__logo(class=`${jsMenuClass}__logo`)
     .page-header__call-button(class=`${jsMenuClass}__call-button`)
       +call-button()
     .page-header__menu-buttons
       +menu-buttons()
-    +areas().page-header__areas(class=`${jsMenuClass}__container`).is-hidden
+    +areas().page-header__areas(class=`${jsMenuClass}__container`)
     +interesting().page-header__interesting

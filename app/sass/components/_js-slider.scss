@@ -1,0 +1,31 @@
+.js-header-menu__call-button {
+  display: none;
+
+  .no-js & {
+    display: block;
+  }
+
+  .is-hidden & {
+    display: block;
+  }
+}
+
+.js-header-menu__legend-open {
+  display: none;
+
+  .is-hidden & {
+    display: block;
+  }
+}
+
+.js-header-menu__legend-close {
+  .is-hidden & {
+    display: none;
+  }
+}
+
+.js-header-menu__container {
+  .is-hidden & {
+    display: none;
+  }
+}

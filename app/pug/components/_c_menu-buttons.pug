@@ -1,10 +1,12 @@
 mixin menu-buttons()
   .menu-buttons
-    button.menu-buttons__item.menu-buttons__item--open(
-      class=`${jsMenuClass}__open-button`
+    button.menu-buttons__item(
+      class=`${jsMenuClass}__button`
     )
-      span.menu-buttons__legend Показать список программ
-    button.menu-buttons__item.menu-buttons__item--close(
-      class=`${jsMenuClass}__close-button`
-    ).is-hidden
-      span.menu-buttons__legend Скрыть список программ
+      span.menu-buttons__legend(
+        class=`${jsMenuClass}__legend-open`
+      ) Показать список программ
+      span.menu-buttons__legend(
+        class=`${jsMenuClass}__legend-close`
+      ) Скрыть список программ
+
