@@ -37,12 +37,10 @@ areasData.forEach((arrValue, arrIndex) => {
 
   servicesData.forEach((value, index) => {
     const [title, price] = value;
-    servicesItemElements[index].querySelector(
-      '.services__title',
-    ).textContent = title;
-    servicesItemElements[index].querySelector(
-      '.services__price',
-    ).textContent = price;
+    servicesItemElements[index].querySelector('.services__title')
+      .textContent = title;
+    servicesItemElements[index].querySelector('.services__price')
+      .textContent = price;
   });
 
   // areasItemContentElements[arrIndex].appendChild(servicesElement);

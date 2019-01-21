@@ -10,7 +10,7 @@ mixin interesting()
             )
               a.interesting__link(href='#')= interestingItem_props.text
           - for (let i = 1; i <= 3; i++)
-            +interesting__item({ number: i, text: `Название акции №${i}` })
+            +interesting__item({ number: i, text: `Наименование акции №${i}` })
       .interesting__buttons
         mixin interesting__button(controlButton_props)
           button.interesting__button(

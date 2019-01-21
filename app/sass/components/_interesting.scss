@@ -1,0 +1,14 @@
+.interesting__container {
+  @include margin-hor();
+  max-width: $page-header-s-max-width;
+}
+
+.interesting__heading {
+  @include accessible-hiding();
+}
+
+.interesting__item {
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}

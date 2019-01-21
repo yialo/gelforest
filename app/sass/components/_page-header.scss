@@ -1,3 +1,29 @@
 .page-header {
+  position: relative;
   display: grid;
+  grid-template:
+    "logo call cont" auto
+    "intr intr intr" auto
+    / 1fr auto auto;
+}
+
+.page-header__logo {
+  grid-area: logo;
+}
+
+.page-header__call-button {
+  grid-area: call;
+}
+
+.page-header__menu-buttons {
+  grid-area: cont;
+}
+
+.page-header__interesting {
+  grid-area: intr;
+}
+
+.page-header__areas {
+  position: absolute;
+  display: none;
 }

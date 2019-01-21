@@ -1,13 +1,12 @@
 .page-footer {
   --uplink-width: 70px;
   display: grid;
-  grid-template-columns: 1fr 70px;
-  grid-template-rows: repeat(4, auto);
-  grid-template-areas:
-    "nav nav"
-    "con con"
-    "soc upl"
-    "cop cop";
+  grid-template:
+    "nav nav" auto
+    "con con" auto
+    "soc upl" auto
+    "cop cop" auto
+    / 1fr 70px;
   grid-row-gap: 1px;
 }
 
