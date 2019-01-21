@@ -8,7 +8,4 @@ mixin areas()
             a.areas__link(href='#')= areasItem_props.title
             .areas__item-content
         each item in areas_data.list
-          +areas__item({
-            modifier: item.modifier,
-            title: item.title,
-          })
+          +areas__item({ modifier: item.modifier, title: item.title })
