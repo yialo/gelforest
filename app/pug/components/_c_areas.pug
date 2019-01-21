@@ -1,11 +1,10 @@
 mixin areas()
   section.areas(class=attributes.class)
-    .areas__container
-      h2.areas__heading Программы
-      ul.areas__list
-        mixin areas__item(areasItem_props)
-          li.areas__item(class=`areas__item--${areasItem_props.modifier}`)
-            a.areas__link(href='#')= areasItem_props.title
-            .areas__item-content
-        each item in areas_data.list
-          +areas__item({ modifier: item.modifier, title: item.title })
+    h2.areas__heading Программы
+    ul.areas__list
+      mixin areas__item(areasItem_props)
+        li.areas__item(class=`areas__item--${areasItem_props.modifier}`)
+          a.areas__link(href='#')= areasItem_props.title
+          .areas__item-content
+      each item in areas_data.list
+        +areas__item({ modifier: item.modifier, title: item.title })

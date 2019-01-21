@@ -1,0 +1,25 @@
+.areas {
+  background-color: white;
+}
+
+.areas__heading {
+  @include accessible-hiding();
+}
+
+.areas__list {
+  @include list();
+  background-color: $light-blue;
+}
+
+.areas__link {
+  display: block;
+  padding: 15px 10px;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  background-image: url("../img/slider--right.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) 19px;
+  background-size: 6px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}

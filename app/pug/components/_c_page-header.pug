@@ -9,5 +9,5 @@ mixin page-header(currentPageId)
       +call-button()
     .page-header__menu-buttons
       +menu-buttons()
-    +areas().page-header__areas(class=`${jsMenuClass}__container`)
+    +areas().page-header__areas(class=`${jsMenuClass}__container`).is-hidden
     +interesting().page-header__interesting
