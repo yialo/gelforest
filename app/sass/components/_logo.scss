@@ -1,3 +1,12 @@
+.logo {
+  padding: 7px 10px;
+}
+
+.logo__image {
+  width: 82px;
+  height: 30px;
+}
+
 .logo__heading {
   @include accessible-hiding();
 }

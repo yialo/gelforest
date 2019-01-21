@@ -1,0 +1,28 @@
+.menu-buttons__item {
+  display: block;
+  padding: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-style: none;
+
+  &.is-hidden {
+    display: none;
+  }
+
+  &--open {
+    width: 20px;
+    height: 15px;
+    background-image: url("../img/menu--open.svg");
+  }
+
+  &--close {
+    width: 16px;
+    height: 16px;
+    background-image: url("../img/menu--close.svg");
+  }
+}
+
+.menu-buttons__legend {
+  @include accessible-hiding();
+}

@@ -1,6 +1,9 @@
 .interesting__container {
   @include margin-hor();
+  position: relative;
   max-width: $page-header-s-max-width;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 
 .interesting__heading {
@@ -8,8 +11,43 @@
 }
 
 .interesting__item {
-  font-size: 16px;
+  @include padding-hor(30px);
+  font-size: 14px;
+  line-height: 16px;
   letter-spacing: 0.02em;
   text-align: center;
   text-transform: uppercase;
+}
+
+.interesting__buttons {
+  @include padding-hor();
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 17px;
+}
+
+.interesting__button {
+  display: block;
+  width: 6px;
+  height: 10px;
+  padding: 0;
+  border-style: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &--previous {
+    background-image: url("../img/slider--left.svg");
+  }
+
+  &--next {
+    background-image: url("../img/slider--right.svg");
+  }
+}
+
+.interesting__legend {
+  @include accessible-hiding();
 }

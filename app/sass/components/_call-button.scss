@@ -1,0 +1,12 @@
+.call-button__link {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/contacts--phone.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.call-button__legend {
+  @include accessible-hiding();
+}

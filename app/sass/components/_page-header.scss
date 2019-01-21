@@ -6,6 +6,7 @@
     "int int int";
   grid-template-rows: repeat(2, auto);
   grid-template-columns: minmax(0, auto) minmax(auto, 1023px) minmax(0, auto);
+  grid-row-gap: 1px;
 }
 
 .page-header__logo {
@@ -15,18 +16,19 @@
 .page-header__call-button {
   grid-area: firstline;
   position: absolute;
-  top: 0;
-  right: 100px;
+  top: 14px;
+  right: 70px;
 }
 
 .page-header__menu-buttons {
   grid-area: firstline;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 14px;
+  right: 10px;
 }
 
 .page-header__interesting {
+  @include shadow(-1px);
   grid-area: int;
 }
 
