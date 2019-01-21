@@ -1,7 +1,3 @@
-.copyright {
-  @include page-footer-shadow(-1px);
-}
-
 .copyright__container {
   @include margin-hor();
   max-width: $page-footer-s-max-width;

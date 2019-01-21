@@ -75,7 +75,7 @@
   clip-path: inset(100%);
 }
 
-@mixin page-footer-shadow($shift: 1px) {
+@mixin shadow($shift: 1px) {
   box-shadow: 0 $shift 0 0 rgba(0, 0, 0, 0.1);
 }
 
