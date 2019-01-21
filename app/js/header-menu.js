@@ -28,13 +28,14 @@ areasMenuButton.addEventListener('click', () => {
   pageHeader.classList.toggle('is-hidden');
 });
 
-// const servicesElementTemplate = document
-//   .querySelector('#services-template')
-//   .content.querySelector('.services');
-// /*
-// const servicesScheduleElementTemplate = document
-// .querySelector('#service-schedule-template');
-// */
+const servicesBlockTemplate = document
+  .querySelector('#services-template')
+  .content.querySelector('.services');
+
+/*
+const servicesScheduleElementTemplate = document
+.querySelector('#service-schedule-template');
+*/
 
 // areasData.forEach((arrValue, arrIndex) => {
 //   const servicesElement = servicesElementTemplate.cloneNode(true);
