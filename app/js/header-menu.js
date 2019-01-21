@@ -53,25 +53,3 @@ areasItemJeeping.addEventListener('click', (evt) => {
 
   pageHeader.appendChild(servicesItemJeeping);
 });
-
-/*
-const servicesScheduleElementTemplate = document
-.querySelector('#service-schedule-template');
-*/
-
-// areasData.forEach((arrValue, arrIndex) => {
-//   const servicesElement = servicesElementTemplate.cloneNode(true);
-//   const servicesItemElements = servicesElement.querySelectorAll(
-//     '.services__item',
-//   );
-
-//   servicesData.forEach((value, index) => {
-//     const [title, price] = value;
-//     servicesItemElements[index].querySelector('.services__title')
-//       .textContent = title;
-//     servicesItemElements[index].querySelector('.services__price')
-//       .textContent = price;
-//   });
-
-//   // areasItemContentElements[arrIndex].appendChild(servicesElement);
-// });
