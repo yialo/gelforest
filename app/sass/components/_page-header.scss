@@ -30,6 +30,7 @@
 .page-header__interesting {
   @include shadow(-1px);
   grid-area: int;
+  width: 100%;
 }
 
 .page-header__areas {

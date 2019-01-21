@@ -10,8 +10,18 @@
   @include accessible-hiding();
 }
 
+.interesting__inner {
+  overflow-x: hidden;
+}
+
+.interesting__list {
+  display: flex;
+  width: 300%;
+}
+
 .interesting__item {
   @include padding-hor(30px);
+  width: calc(100% / 3);
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
