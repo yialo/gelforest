@@ -5,7 +5,6 @@ mixin page-header(currentPageId)
     jsMenuClass,
     'no-js',
   ])
-    include ../common/_test_services
     +logo(currentPageId).page-header__logo(class=`${jsMenuClass}__logo`)
     .page-header__call-button(class=`${jsMenuClass}__call-button`)
       +call-button()

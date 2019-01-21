@@ -3,8 +3,10 @@ mixin areas()
     h2.areas__heading Программы
     ul.areas__list
       mixin areas__item(areasItem_props)
-        li.areas__item(class=`areas__item--${areasItem_props.modifier}`)
-          a.areas__link(href=`areas/${areasItem_props.modifier}.html`)= areasItem_props.title
-          .areas__item-content
+        li.areas__item
+          a.areas__link(
+            class=`areas__item--${areasItem_props.modifier}`
+            href=`areas/${areasItem_props.modifier}.html`
+          )= areasItem_props.title
       each item in areas_data.list
         +areas__item({ modifier: item.modifier, title: item.title })
