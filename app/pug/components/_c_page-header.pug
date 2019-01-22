@@ -3,7 +3,6 @@ mixin page-header(currentPageId)
     `page-header--${currentPageId}`,
     attributes.class,
     jsMenuClass,
-    'no-js',
   ])
     +logo(currentPageId).page-header__logo
     .page-header__call-button(class=`${jsMenuClass}__call-button`)

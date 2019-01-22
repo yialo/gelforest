@@ -2,8 +2,8 @@
 
 // Adjust basic classes
 
+document.body.classList.remove('no-js');
 const pageHeader = document.querySelector('.js-header-menu');
-pageHeader.classList.remove('no-js');
 pageHeader.classList.add('is-hidden');
 
 // Main menu show/hide mechanics

@@ -9,7 +9,7 @@ include _i_components.pug
 doctype html
 html(lang='ru')
   +head({ title: page.title })
-  body.page(class=`page--${page.id}`)
+  body.page(class=[`page--${page.id}`, 'no-js'])
     +page-header(page.id).page__header
     main.page__main
     +page-footer(page.id).page__footer

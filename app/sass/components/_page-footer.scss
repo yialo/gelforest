@@ -7,6 +7,14 @@
     "soc upl" auto
     "cop cop" auto
     / 1fr 70px;
+
+  .no-js & {
+    grid-template-areas:
+    "nav nav"
+    "con con"
+    "soc soc"
+    "cop cop";
+  }
 }
 
 .page-footer__navigation {
@@ -26,13 +34,17 @@
   grid-area: soc;
 }
 
-.page-footer__uplink {
-  grid-area: upl;
-  width: var(--uplink-width);
-}
-
 .page-footer__copyright {
   @include shadow(-1px);
   grid-area: cop;
   width: 100%;
+}
+
+.page-footer__uplink {
+  grid-area: upl;
+  width: var(--uplink-width);
+
+  .no-js & {
+    display: none;
+  }
 }
