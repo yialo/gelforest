@@ -3,3 +3,4 @@ mixin logo(currentPageId)
     a.logo__link(href=(currentPageId === 'index' ? null : 'index.html'))
       img.logo__image(src='img/logo--s.png' alt=siteName)
       h1.logo__heading= siteName
+    noscript.logo__hint У Вас отключен JavaScript, поэтому сайт открыт в режиме минимальной функциональности.

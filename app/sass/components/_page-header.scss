@@ -58,6 +58,7 @@
 
   .no-js & {
     grid-area: menu;
+    position: static;
     z-index: auto;
     max-width: none;
   }

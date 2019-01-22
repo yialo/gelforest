@@ -10,3 +10,9 @@
 .logo__heading {
   @include accessible-hiding();
 }
+
+.logo__hint {
+  display: block;
+  margin-top: 8px;
+  color: blue;
+}
