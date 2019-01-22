@@ -23,6 +23,22 @@
       }
     ],
     "no-alert": "error",
-    "no-console": "error"
+    "no-console": "error",
+    "prefer-destructuring": [
+      "error",
+      {
+        "AssignmentExpression": {
+          "array": false,
+          "object": true
+        },
+        "VariableDeclarator": {
+          "array": false,
+          "object": true
+        }
+      },
+      {
+        "enforceForRenamedProperties": false
+      }
+    ]
   }
 }

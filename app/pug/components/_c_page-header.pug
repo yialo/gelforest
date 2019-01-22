@@ -3,9 +3,8 @@ mixin page-header(currentPageId)
     `page-header--${currentPageId}`,
     attributes.class,
     jsMenuClass,
-    'no-js',
   ])
-    +logo(currentPageId).page-header__logo(class=`${jsMenuClass}__logo`)
+    +logo(currentPageId).page-header__logo
     .page-header__call-button(class=`${jsMenuClass}__call-button`)
       +call-button()
     .page-header__menu-buttons

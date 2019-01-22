@@ -1,5 +1,9 @@
 .socials {
   padding: 18px 40px 18px 10px;
+
+  .no-js & {
+    padding-right: 10px;
+  }
 }
 
 .socials__heading {

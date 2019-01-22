@@ -24,3 +24,15 @@
   background-size: 6px 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
+
+.areas__nest {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  display: none;
+  width: 100%;
+
+  &.is-shown {
+    display: block;
+  }
+}

@@ -1,0 +1,18 @@
+mixin service-schedule(servicesSchedule_props)
+  .service-schedule
+    .service-schedule__headline
+      a.service-schedule__return-link(href='index.html')
+        span.service-schedule__parent-heading= servicesSchedule_props.parentName
+        h4.service-schedule__heading= servicesSchedule_props.name
+    ul.service-schedule__list
+      mixin service-schedule__item(servicesScheduleItem_props)
+        li.service-schedule__item(
+          class=`service-schedule__item--${servicesScheduleItem_props.partOfDay}`
+        )
+          a.service-schedule__link(href='#')= servicesScheduleItem_props.time
+      each item in servicesSchedule_data
+        - let [partOfDay, time] = item;
+        +service-schedule__item({
+          partOfDay: partOfDay,
+          time: time,
+        })
