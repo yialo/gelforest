@@ -1,5 +1,12 @@
 .areas {
+  position: relative;
   background-color: white;
+}
+
+.areas__nest {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
 }
 
 .areas__heading {
