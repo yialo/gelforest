@@ -1,39 +1,55 @@
-.services {
+.service-schedule {
   background-color: white;
 }
 
-.services__headline {
+.service-schedule__headline {
   @include shadow();
   display: flex;
   margin-bottom: 1px;
 }
 
-.services__return-link {
+.service-schedule__return-link {
+  display: flex;
   min-width: 100px;
   padding: 14px 10px 14px 32px;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
+  text-transform: uppercase;
   background-image: url("../img/slider--left.svg");
   background-repeat: no-repeat;
   background-position: 10px 17px;
   background-size: 6px 10px;
 }
 
-.services__heading {
-  display: inline;
+.service-schedule__parent-heading {
+  position: relative;
+  margin-right: 6px;
+  padding-right: 7px;
+
+  &::after {
+    content: "";
+    top: -2px;
+    right: 0;
+    position: absolute;
+    width: 1px;
+    height: 19px;
+    background-color: #cccccc;
+  }
+}
+
+.service-schedule__heading {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 400;
-  text-transform: uppercase;
 }
 
-.services__list {
+.service-schedule__list {
   @include list();
   background-color: $light-blue;
 }
 
-.services__link {
+.service-schedule__link {
   display: block;
   padding: 15px 10px;
   font-size: 16px;
@@ -44,16 +60,4 @@
   background-position: calc(100% - 10px) 19px;
   background-size: 6px 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.services__nest {
-  position: absolute;
-  top: 0;
-  z-index: 3;
-  // display: none;
-  width: 100%;
-
-  &.is-shown {
-    display: block;
-  }
 }

@@ -49,4 +49,4 @@ for (let i = 0; i < servicesReturnLinks.length; i += 1) {
     servicesReturnEvent.preventDefault();
     areasNests[i].classList.remove('is-shown');
   });
-};
+}
