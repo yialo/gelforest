@@ -15,7 +15,7 @@ mixin services(services_props)
             block
       each item, index in services_data[services_props.modifier]
         - let [title, price] = item;
-        +services__item({ number: index, title: title, price: price })
+        +services__item({ number: index + 1, title: title, price: price })
           +service-schedule({
             parentName: services_props.heading,
             name: title,

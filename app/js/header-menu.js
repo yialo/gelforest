@@ -16,12 +16,22 @@ const areasNests = areasList.querySelectorAll('.areas__nest');
 const servicesReturnLinks = areasList
   .querySelectorAll('.services__return-link');
 const servicesLists = areasList.querySelectorAll('.services__list');
+const servicesLinks = areasList.querySelectorAll('.services__link');
+const servicesNests = areasList.querySelectorAll('.services__nest');
+const servicesScheduleLists = areasList
+  .querySelectorAll('.service-schedule__list');
+const servicesScheduleReturnLinks = areasList
+  .querySelectorAll('.service-schedule__return-link');
 
 menuButton.addEventListener('click', () => {
   pageHeader.classList.toggle('is-hidden');
 
   for (let i = 0; i < areasNests.length; i += 1) {
     areasNests[i].classList.remove('is-shown');
+  }
+
+  for (let i = 0; i < servicesNests.length; i += 1) {
+    servicesNests[i].classList.remove('is-shown');
   }
 });
 
@@ -47,6 +57,29 @@ for (let i = 0; i < areasLinks.length; i += 1) {
 for (let i = 0; i < servicesReturnLinks.length; i += 1) {
   servicesReturnLinks[i].addEventListener('click', (servicesReturnEvent) => {
     servicesReturnEvent.preventDefault();
+
     areasNests[i].classList.remove('is-shown');
   });
+}
+
+// Services schedule menus show/hide mechanics
+
+for (let i = 0; i < servicesLinks.length; i += 1) {
+  servicesLinks[i].addEventListener('click', (servicesLinkEvent) => {
+    servicesLinkEvent.preventDefault();
+
+    servicesScheduleLists[i].style.minHeight = getComputedStyle(areasList)
+      .height;
+    servicesNests[i].classList.add('is-shown');
+  });
+}
+
+for (let i = 0; i < servicesScheduleReturnLinks.length; i += 1) {
+  servicesScheduleReturnLinks[i].addEventListener(
+    'click', (servicesScheduleReturnEvent) => {
+      servicesScheduleReturnEvent.preventDefault();
+
+      servicesNests[i].classList.remove('is-shown');
+    },
+  );
 }
