@@ -11,6 +11,7 @@
 .service-schedule__return-link {
   display: flex;
   min-width: 100px;
+  max-width: calc(100% - 36px);
   padding: 14px 10px 14px 32px;
   font-size: 14px;
   line-height: 16px;
@@ -39,9 +40,12 @@
 }
 
 .service-schedule__heading {
+  overflow-x: hidden;
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 400;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .service-schedule__list {

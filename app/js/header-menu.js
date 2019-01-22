@@ -48,7 +48,7 @@ for (let i = 0; i < areasLinks.length; i += 1) {
     areasLinkEvent.preventDefault();
 
     const logoHeight = getComputedStyle(logo).height;
-    areasNests[i].style.top = `calc(${logoHeight} * -1 - 2px)`;
+    areasNests[i].style.top = `calc(${logoHeight} * -1 - 1px)`;
     servicesLists[i].style.minHeight = getComputedStyle(areasList).height;
     areasNests[i].classList.add('is-shown');
   });
