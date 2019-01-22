@@ -1,84 +1,52 @@
 'use strict';
 
+// Adjust basic classes
+
 const pageHeader = document.querySelector('.js-header-menu');
 pageHeader.classList.remove('no-js');
 pageHeader.classList.add('is-hidden');
 
-const areasMenuButton = pageHeader.querySelector('.js-header-menu__button');
-areasMenuButton.addEventListener('click', () => {
+// Main menu show/hide mechanics
+
+const menuButton = pageHeader.querySelector('.js-header-menu__button');
+const logo = pageHeader.querySelector('.logo');
+const areasList = pageHeader.querySelector('.areas__list');
+const areasLinks = areasList.querySelectorAll('.areas__link');
+const areasNests = areasList.querySelectorAll('.areas__nest');
+const servicesReturnLinks = areasList
+  .querySelectorAll('.services__return-link');
+const servicesLists = areasList.querySelectorAll('.services__list');
+
+menuButton.addEventListener('click', () => {
   pageHeader.classList.toggle('is-hidden');
+
+  for (let i = 0; i < areasNests.length; i += 1) {
+    areasNests[i].classList.remove('is-shown');
+  }
 });
-window.addEventListener('keydown', (evt) => {
-  if (evt.keyCode === 27 && !pageHeader.classList.contains('is-hidden')) {
+
+window.addEventListener('keydown', (menuButtonEvt) => {
+  if (menuButtonEvt.keyCode === 27 && !pageHeader.classList.contains('is-hidden')) {
     pageHeader.classList.add('is-hidden');
   }
 });
 
-const pageHeaderLogo = pageHeader.querySelector('.page-header__logo');
-const areas = pageHeader.querySelector('.js-header-menu__container');
-const areasNest = areas.querySelector('.areas__nest');
-const pageHeaderLogoStyles = getComputedStyle(pageHeaderLogo);
-const pageHeaderLogoHeight = pageHeaderLogoStyles.height;
-const pageHeaderLogoMarginBottom  = pageHeaderLogoStyles.marginBottom;
-areasNest.style.top = `calc(${pageHeaderLogoHeight} * -1 - ${pageHeaderLogoMarginBottom})`;
+// Services menus show/hide mechanics
 
-const areasData = [
-  'Джиппинг',
-  'Яхты',
-  'Парашют',
-  'Дайвинг',
-  'Квадроциклы',
-  'Экскурсии',
-];
+for (let i = 0; i < areasLinks.length; i += 1) {
+  areasLinks[i].addEventListener('click', (areasLinkEvent) => {
+    areasLinkEvent.preventDefault();
 
-const servicesData = [
-  ['Тайны Геленджика', 1000],
-  ['Грозовые ворота', 1200],
-  ['Долина водопадов и горы Кавказа', 1600],
-  ['Ночной Геленджик', 1000],
-];
+    const logoHeight = getComputedStyle(logo).height;
+    areasNests[i].style.top = `calc(${logoHeight} * -1 - 2px)`;
+    servicesLists[i].style.minHeight = getComputedStyle(areasList).height;
+    areasNests[i].classList.add('is-shown');
+  });
+}
 
-const servicesBlockTemplate = document
-  .querySelector('#services-template')
-  .content.querySelector('.services');
-
-const areasList = areas.querySelector('.areas__list');
-const areasItems = areasList.querySelectorAll('.areas__item');
-
-// Обработка кликов по пунктам главного меню
-
-const areasLinkClick = function areasLinkClickHandler(areasItemNumber) {
-  areasItems[areasItemNumber].addEventListener('click', (evt) => {
-    evt.preventDefault();
-    const services = servicesBlockTemplate.cloneNode(true);
-    const servicesReturnLink = services.querySelector('.services__return-link');
-    const servicesHeading = servicesReturnLink.querySelector(
-      '.services__heading',
-    );
-    servicesHeading.textContent = areasData[areasItemNumber];
-
-    const servicesList = services.querySelector('.services__list');
-    const areasListHeight = getComputedStyle(areasList).height;
-    servicesList.style.minHeight = areasListHeight;
-
-    const servicesItems = servicesList.querySelectorAll('.services__item');
-
-    for (let i = 0; i < servicesItems.length; i += 1) {
-      const servicesTitle = servicesItems[i].querySelector('.services__title');
-      const servicesPrice = servicesItems[i].querySelector('.services__price');
-      servicesTitle.textContent = servicesData[i][0];
-      servicesPrice.textContent = servicesData[i][1];
-    }
-
-    areasNest.appendChild(services);
-
-    servicesReturnLink.addEventListener('click', (evt) => {
-      evt.preventDefault();
-      areasNest.removeChild(services);
-    });
+for (let i = 0; i < servicesReturnLinks.length; i += 1) {
+  servicesReturnLinks[i].addEventListener('click', (servicesReturnEvent) => {
+    servicesReturnEvent.preventDefault();
+    areasNests[i].classList.remove('is-shown');
   });
 };
-
-for (let i = 0; i < areasItems.length; i += 1) {
-  areasLinkClick(i);
-}

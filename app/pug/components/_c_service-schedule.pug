@@ -1,0 +1,10 @@
+mixin service-schedule()
+  .service-schedule
+    ul.service-schedule__list
+      - for (let i = 1; i <= 3; i += 1)
+        li.service-schedule__item
+          a.service-schedule__link(
+            class=`service-schedule__link--${i}`
+            href='#'
+          )
+            span.services-schedule__legend Показать описание

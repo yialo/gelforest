@@ -1,14 +1,9 @@
 .services {
-  grid-area: logo;
-  position: absolute;
-  z-index: 2;
-  width: 100%;
   background-color: white;
 }
 
 .services__headline {
   @include shadow();
-  display: flex;
   margin-bottom: 1px;
 }
 
@@ -36,6 +31,7 @@
 
 .services__list {
   @include list();
+  flex-grow: 1;
   background-color: $light-blue;
 }
 

@@ -1,12 +1,5 @@
 .areas {
-  position: relative;
   background-color: white;
-}
-
-.areas__nest {
-  position: absolute;
-  z-index: 1;
-  width: 100%;
 }
 
 .areas__heading {
@@ -30,4 +23,16 @@
   background-position: calc(100% - 10px) 19px;
   background-size: 6px 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.areas__nest {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  display: none;
+  width: 100%;
+
+  &.is-shown {
+    display: block;
+  }
 }

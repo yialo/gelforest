@@ -1,0 +1,20 @@
+mixin services(services_props)
+  .services(class=`services--${services_props.modifier}`)
+    .services__headline
+      a.services__return-link(href='index.html')
+        h3.services__heading= services_props.heading
+    ul.services__list
+      mixin services__item(servicesItem_props)
+        li.services__item
+          a.services__link(class=`services__link--${servicesItem_props.number}` href='#')
+            span.services__title= servicesItem_props.title
+            = ' ('
+            span.services__price= servicesItem_props.price
+            = ' руб.)'
+      each item, index in services_data[services_props.modifier]
+        - let [title, price] = item;
+        +services__item({
+          number: index,
+          title: title,
+          price: price,
+        })

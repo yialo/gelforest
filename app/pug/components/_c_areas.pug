@@ -1,13 +1,17 @@
 mixin areas()
   section.areas(class=attributes.class)
-    .areas__nest
     h2.areas__heading Программы
     ul.areas__list
       mixin areas__item(areasItem_props)
-        li.areas__item
+        li.areas__item(class=`areas__item--${areasItem_props.modifier}`)
           a.areas__link(
-            class=`areas__link--${areasItem_props.modifier}`
             href=`areas/${areasItem_props.modifier}.html`
           )= areasItem_props.title
-      each item in areas_data.list
+          .areas__nest
+            block
+      each item in areas_data
         +areas__item({ modifier: item.modifier, title: item.title })
+          +services({
+            modifier: item.modifier,
+            heading: item.title,
+          })
