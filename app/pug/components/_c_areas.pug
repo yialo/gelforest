@@ -5,7 +5,7 @@ mixin areas()
       mixin areas__item(areasItem_props)
         li.areas__item
           a.areas__link(
-            class=`areas__item--${areasItem_props.modifier}`
+            class=`areas__link--${areasItem_props.modifier}`
             href=`areas/${areasItem_props.modifier}.html`
           )= areasItem_props.title
       each item in areas_data.list
