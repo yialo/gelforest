@@ -2,12 +2,11 @@ mixin page-header(currentPageId)
   header.page-header(class=[
     `page-header--${currentPageId}`,
     attributes.class,
-    jsMenuClass,
   ])
     +logo(currentPageId).page-header__logo
-    .page-header__call-button(class=`${jsMenuClass}__call-button`)
+    .page-header__call-button
       +call-button()
     .page-header__menu-buttons
       +menu-buttons()
-    +areas().page-header__areas(class=`${jsMenuClass}__container`)
+    +areas().page-header__areas
     +interesting().page-header__interesting

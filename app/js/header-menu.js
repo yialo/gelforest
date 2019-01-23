@@ -3,14 +3,16 @@
 // Adjust basic classes
 
 document.body.classList.remove('no-js');
-const pageHeader = document.querySelector('.js-header-menu');
+const pageHeader = document.querySelector('.page-header');
+const areas = pageHeader.querySelector('.areas');
+areas.style.visibility = 'hidden';
 pageHeader.classList.add('is-hidden');
 
 // Main menu show/hide mechanics
 
-const menuButton = pageHeader.querySelector('.js-header-menu__button');
+const menuButton = pageHeader.querySelector('.menu-buttons__item');
 const logo = pageHeader.querySelector('.logo');
-const areasList = pageHeader.querySelector('.areas__list');
+const areasList = areas.querySelector('.areas__list');
 const areasLinks = areasList.querySelectorAll('.areas__link');
 const areasNests = areasList.querySelectorAll('.areas__nest');
 const servicesReturnLinks = areasList
@@ -24,10 +26,13 @@ const servicesScheduleReturnLinks = areasList
   .querySelectorAll('.service-schedule__return-link');
 
 menuButton.addEventListener('click', () => {
+  areas.style.visibility = 'visible';
   pageHeader.classList.toggle('is-hidden');
 
   for (let i = 0; i < areasNests.length; i += 1) {
-    areasNests[i].classList.remove('is-shown');
+    if (pageHeader.classList.contains('is-hidden') && areasNests[i].classList.contains('is-shown')) {
+      areasNests[i].classList.remove('is-shown');
+    }
   }
 
   for (let i = 0; i < servicesNests.length; i += 1) {

@@ -1,5 +1,18 @@
 .areas {
+  overflow-x: hidden;
+
+  .is-hidden & {
+    pointer-events: none;
+  }
+}
+
+.areas__inner {
   background-color: white;
+  transition: transform ease-out 500ms;
+
+  .is-hidden & {
+    transform: translateX(100%);
+  }
 }
 
 .areas__heading {

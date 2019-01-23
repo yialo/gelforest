@@ -30,6 +30,11 @@
 
   .no-js & {
     right: 10px;
+    display: block;
+  }
+
+  .is-hidden & {
+    display: block;
   }
 }
 

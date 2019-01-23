@@ -1,17 +1,18 @@
 mixin areas()
   section.areas(class=attributes.class)
-    h2.areas__heading Программы
-    ul.areas__list
-      mixin areas__item(areasItem_props)
-        li.areas__item(class=`areas__item--${areasItem_props.modifier}`)
-          a.areas__link(
-            href=`areas/${areasItem_props.modifier}.html`
-          )= areasItem_props.title
-          .areas__nest
-            block
-      each item in areas_data
-        +areas__item({ modifier: item.modifier, title: item.title })
-          +services({
-            modifier: item.modifier,
-            heading: item.title,
-          })
+    .areas__inner
+      h2.areas__heading Программы
+      ul.areas__list
+        mixin areas__item(areasItem_props)
+          li.areas__item(class=`areas__item--${areasItem_props.modifier}`)
+            a.areas__link(
+              href=`areas/${areasItem_props.modifier}.html`
+            )= areasItem_props.title
+            .areas__nest
+              block
+        each item in areas_data
+          +areas__item({ modifier: item.modifier, title: item.title })
+            +services({
+              modifier: item.modifier,
+              heading: item.title,
+            })

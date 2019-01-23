@@ -18,4 +18,18 @@
 
 .menu-buttons__legend {
   @include accessible-hiding();
+
+  &--open {
+    display: none;
+
+    .is-hidden & {
+      display: block;
+    }
+  }
+
+  &--close {
+    .is-hidden & {
+      display: none;
+    }
+  }
 }
