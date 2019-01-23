@@ -27,16 +27,23 @@ const servicesScheduleReturnLinks = areasList
 
 menuButton.addEventListener('click', () => {
   areas.style.visibility = 'visible';
-  pageHeader.classList.toggle('is-hidden');
 
-  for (let i = 0; i < areasNests.length; i += 1) {
-    if (pageHeader.classList.contains('is-hidden') && areasNests[i].classList.contains('is-shown')) {
-      areasNests[i].classList.remove('is-shown');
+  if (pageHeader.classList.contains('is-hidden')) {
+    for (let i = 0; i < areasNests.length; i += 1) {
+      if (areasNests[i].classList.contains('is-shown')) {
+        areasNests[i].classList.remove('is-shown');
+      }
     }
-  }
 
-  for (let i = 0; i < servicesNests.length; i += 1) {
-    servicesNests[i].classList.remove('is-shown');
+    for (let i = 0; i < servicesNests.length; i += 1) {
+      if (servicesNests[i].classList.contains('is-shown')) {
+        servicesNests[i].classList.remove('is-shown');
+      }
+    }
+
+    pageHeader.classList.remove('is-hidden');
+  } else {
+    pageHeader.classList.add('is-hidden');
   }
 });
 
