@@ -11,7 +11,6 @@ pageHeader.classList.add('is-hidden');
 // Main menu show/hide mechanics
 
 const menuButton = pageHeader.querySelector('.menu-buttons__item');
-const logo = pageHeader.querySelector('.logo');
 const areasList = areas.querySelector('.areas__list');
 const areasLinks = areasList.querySelectorAll('.areas__link');
 const areasNests = areasList.querySelectorAll('.areas__nest');
@@ -59,8 +58,7 @@ for (let i = 0; i < areasLinks.length; i += 1) {
   areasLinks[i].addEventListener('click', (areasLinkEvent) => {
     areasLinkEvent.preventDefault();
 
-    const logoHeight = getComputedStyle(logo).height;
-    areasNests[i].style.top = `calc(${logoHeight} * -1 - 1px)`;
+    areasNests[i].style.top = '-45px';
     servicesLists[i].style.minHeight = getComputedStyle(areasList).height;
     areasNests[i].classList.add('is-shown');
   });

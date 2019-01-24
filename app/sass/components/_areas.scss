@@ -1,4 +1,5 @@
 .areas {
+  padding-bottom: 45px;
   overflow-x: hidden;
 
   .is-hidden & {
@@ -8,10 +9,11 @@
 
 .areas__inner {
   background-color: white;
+  transform: translate(0, 45px);
   transition: transform ease-out 500ms;
 
   .is-hidden & {
-    transform: translateX(100%);
+    transform: translate(100%, 45px);
   }
 }
 
@@ -41,7 +43,6 @@
 .areas__nest {
   position: absolute;
   top: 0;
-  z-index: 2;
   display: none;
   width: 100%;
 
