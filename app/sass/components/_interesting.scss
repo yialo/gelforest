@@ -11,16 +11,38 @@
 }
 
 .interesting__inner {
+  @include margin-hor();
+  width: calc(100% - 60px);
   overflow-x: hidden;
 }
 
 .interesting__list {
+  @include list();
   display: flex;
   width: 300%;
+  transition: transform 1s;
+
+  &.slider-auto {
+    animation-name: slider-run;
+    animation-timing-function: ease;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+  }
+
+  &.js-slide--1 {
+    transform: translateX(0);
+  }
+
+  &.js-slide--2 {
+    transform: translateX(calc(-100% / 3));
+  }
+
+  &.js-slide--3 {
+    transform: translateX(calc(-200% / 3));
+  }
 }
 
 .interesting__item {
-  @include padding-hor(30px);
   width: calc(100% / 3);
   font-size: 14px;
   line-height: 16px;

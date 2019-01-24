@@ -1,11 +1,11 @@
 mixin interesting()
   section.interesting(class=attributes.class)
-    .interesting__container(class=jsSliderClass)
+    .interesting__container
       h2.interesting__heading Наши акции
-      .interesting__inner(class=`${jsSliderClass}__inner`)
-        .interesting__list
+      .interesting__inner
+        ul.interesting__list.js-slide.js-slide--1.slider-auto
           mixin interesting__item(interestingItem_props)
-            .interesting__item(
+            li.interesting__item(
               class=`interesting__item--${interestingItem_props.number}`
             )
               a.interesting__link(href='#')= interestingItem_props.text
@@ -14,10 +14,7 @@ mixin interesting()
       .interesting__buttons
         mixin interesting__button(controlButton_props)
           button.interesting__button(
-            class=[
-              `interesting__button--${controlButton_props.modifier}`,
-              `${jsSliderClass}__button`,
-            ]
+            class=`interesting__button--${controlButton_props.modifier}`
             type='button'
           )
             span.interesting__legend Перейти к #{controlButton_props.textFragment} слайду
