@@ -1,8 +1,8 @@
-@import "abstracts/_variables.scss";
-@import "abstracts/_functions.scss";
-@import "abstracts/_mixins.scss";
-@import "vendors/_normalize.scss";
+@import "abstracts/_variables";
+@import "abstracts/_functions";
+@import "abstracts/_mixins";
+@import "vendors/_normalize";
+@import "vendors/_slick";
 @import "base/_fonts";
-@import "base/_animations";
 @import "base/_global";
-@import "components/*.scss";
+@import "components/*";

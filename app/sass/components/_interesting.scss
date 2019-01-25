@@ -16,34 +16,7 @@
   overflow-x: hidden;
 }
 
-.interesting__list {
-  @include list();
-  display: flex;
-  width: 300%;
-  transition: transform 1s;
-
-  &.slider-auto {
-    animation-name: slider-run;
-    animation-timing-function: ease;
-    animation-duration: 12s;
-    animation-iteration-count: infinite;
-  }
-
-  &.js-slide--1 {
-    transform: translateX(0);
-  }
-
-  &.js-slide--2 {
-    transform: translateX(calc(-100% / 3));
-  }
-
-  &.js-slide--3 {
-    transform: translateX(calc(-200% / 3));
-  }
-}
-
 .interesting__item {
-  width: calc(100% / 3);
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
@@ -61,23 +34,24 @@
   padding-top: 17px;
 }
 
-.interesting__button {
+.slick-arrow {
   display: block;
   width: 6px;
   height: 10px;
   padding: 0;
+  font-size: 0;
   border-style: none;
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: cover;
+}
 
-  &--previous {
-    background-image: url("../img/slider--left.svg");
-  }
+.slick-prev {
+  background-image: url("../img/slider--left.svg");
+}
 
-  &--next {
-    background-image: url("../img/slider--right.svg");
-  }
+.slick-next {
+  background-image: url("../img/slider--right.svg");
 }
 
 .interesting__legend {

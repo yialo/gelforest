@@ -3,24 +3,12 @@ mixin interesting()
     .interesting__container
       h2.interesting__heading Наши акции
       .interesting__inner
-        ul.interesting__list.js-slide.js-slide--1.slider-auto
+        .interesting__list
           mixin interesting__item(interestingItem_props)
-            li.interesting__item(
+            .interesting__item(
               class=`interesting__item--${interestingItem_props.number}`
             )
               a.interesting__link(href='#')= interestingItem_props.text
           - for (let i = 1; i <= 3; i++)
             +interesting__item({ number: i, text: `Наименование акции №${i}` })
       .interesting__buttons
-        mixin interesting__button(controlButton_props)
-          button.interesting__button(
-            class=`interesting__button--${controlButton_props.modifier}`
-            type='button'
-          )
-            span.interesting__legend Перейти к #{controlButton_props.textFragment} слайду
-        each item in interestingButtons_data
-          - let [modifier, textFragment] = item;
-          +interesting__button({
-            modifier: modifier,
-            textFragment: textFragment,
-          })
