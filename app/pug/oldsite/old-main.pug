@@ -1,0 +1,26 @@
+section.program.page-main__program
+  .program__inner
+    h2.program__heading Лесные угодья
+    img.program__image(src='img/oldsite-main-bg.png' alt='')
+    p.program__lead Фирма "Лесные угодья" - это полный спектр экскурсионных услуг в городе Геленджик.
+
+section.advangates.page-main__advangates
+  .advangates__inner
+    h2.advangates__heading Почему стоит выбрать отдых именно у нас?
+    ul.advangates__list
+      -
+        const advantagesList_data = [
+          ['Самые увлекательные программы', 3],
+          ['Собственный автопарк', 6],
+          ['Гарантированное веселье и незабываемые эмоции!', 8],
+        ];
+      mixin advangates__item(itemNumber,imageNumber, caption)
+        li.advangates__item
+          img.advangates__image(
+            src=`img/oldsite-1_0${imageNumber}.png`
+            alt=`Преимущество №${itemNumber}`
+          )
+          h3.advangates__caption= caption
+      each item, index in advantagesList_data
+        - const [caption, imageNumber] = item;
+        +advangates__item(index + 1, imageNumber, caption)
