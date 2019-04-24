@@ -35,6 +35,10 @@
   "main": "gulpfile.js",
   "name": "gelforest",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yialo/gelforest.git"
+  },
   "scripts": {
     "build": "gulp build",
     "eslint": "eslint \"app/js/**/*.js\"",
